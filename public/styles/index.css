@@ -12,7 +12,8 @@
   cursor: none !important;
 }
 
-:root, .bg-default {
+:root,
+.bg-default {
   color: rgba(255, 255, 255, 0.87);
   /* background-color: #171717; */
 }
@@ -29,7 +30,8 @@
   color: #4c4c4cdd;
 }
 
-.color-alt, .color-alt-hover:hover  {
+.color-alt,
+.color-alt-hover:hover {
   color: #EB920C;
 }
 
@@ -38,7 +40,7 @@
 }
 
 .background-image {
-  background-image: url('../ok.jpg'); 
+  background-image: url('../ok.jpg');
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
@@ -99,14 +101,14 @@
   border-radius: 50%;
   pointer-events: none;
   animation: move 5s ease-in-out infinite;
-  box-shadow: 
-    inset 0 0 30px #fff, 
-    inset 20px 0 30px #d7d938, 
-    inset -20px 0 30px #ff3407, 
-    inset 4px 7px 300px #ff0c00, 
-    inset -20px 0 300px #feff88, 
-    0 0 50px #fff, 
-    -10px 0 80px #f0f, 
+  box-shadow:
+    inset 0 0 30px #fff,
+    inset 20px 0 30px #d7d938,
+    inset -20px 0 30px #ff3407,
+    inset 4px 7px 300px #ff0c00,
+    inset -20px 0 300px #feff88,
+    0 0 50px #fff,
+    -10px 0 80px #f0f,
     10px 0 80px #0ff
 }
 
@@ -119,7 +121,15 @@
 }
 
 @keyframes move {
-  0% { transform: translateX(-5px) }
-  50% { transform: translateX(5px); }
-  100% { transform: translateX(-5px) }
+  0% {
+    transform: translateX(-5px)
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+
+  100% {
+    transform: translateX(-5px)
+  }
 }
