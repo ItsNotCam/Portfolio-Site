@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Sofia Sans';
+  scroll-behavior: smooth;
+  color-scheme: dark;
+  font-weight: 300;
+
+  cursor: none !important;
+}
+
+:root, .bg-default {
+  color: rgba(255, 255, 255, 0.87);
+  /* background-color: #171717; */
+}
+
+.color-light {
+  color: #e1e1e1;
+}
+
+.bg-color-alt {
+  background-color: #EB920C;
+}
+
+.color-dark {
+  color: #4c4c4cdd;
+}
+
+.color-alt, .color-alt-hover:hover  {
+  color: #EB920C;
+}
+
+.no-select {
+  pointer-events: none;
+}
+
+.background-image {
+  background-image: url('../ok.jpg'); 
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Credits */
+.credits {
+  text-align: left;
+  position: fixed;
+  top: 95vh;
+  left: 1.5vw;
+}
+
+.credits-link {
+  text-decoration: none;
+}
+
+/* SCROLL BAR */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(90, 90, 90);
+  border-radius: 10px;
+}
+
+/* Cursor Circle */
+.circle-follow {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  height: 1.5em;
+  width: 1.5em;
+  z-index: 20;
+  border: 2px solid #dddd;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.circle-animated {
+  position: absolute;
+  left: 700px;
+  top: 250px;
+  transform: translate(-50%, -50%);
+  height: 3em;
+  width: 3em;
+  z-index: 20;
+  background-color: #EB920C;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: move 5s ease-in-out infinite;
+  box-shadow: 
+    inset 0 0 30px #fff, 
+    inset 20px 0 30px #d7d938, 
+    inset -20px 0 30px #ff3407, 
+    inset 4px 7px 300px #ff0c00, 
+    inset -20px 0 300px #feff88, 
+    0 0 50px #fff, 
+    -10px 0 80px #f0f, 
+    10px 0 80px #0ff
+}
+
+.circle-follow-hovering {
+  background-color: white;
+}
+
+.nav-link:hover {
+  color: #EB920C;
+}
+
+@keyframes move {
+  0% { transform: translateX(-5px) }
+  50% { transform: translateX(5px); }
+  100% { transform: translateX(-5px) }
+}

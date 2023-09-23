@@ -1,0 +1,43 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    user-select: none;
+    font-size: 20px;
+    padding: 4vh 4vw;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .navbar-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3vw;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    transition: all 250ms;
+  }
+  
+  .nav-item {
+    list-style-type: none;
+    list-style: none;
+  }
+  
+  .nav-link:hover {
+    color: #EB920C;
+  }
+  
+  .nav-numbered-list {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .nav-text-above {
+    font-size: 65%;
+    float: right;
+    text-align: right;
+    opacity: 75%;
+  }
+  
