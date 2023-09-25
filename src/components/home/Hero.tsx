@@ -17,7 +17,7 @@ export const Hero = (): JSX.Element => {
 				<span className="blinking-text">_</span>
 			</h1>
 			<p className="header-description">
-				SOFTWARE, LEARNING, and <span className="color-alt">COFFEE</span>
+				SOFTWARE, CARS, and <span className="color-alt">COFFEE</span>
 			</p>
 		</div>
 	)

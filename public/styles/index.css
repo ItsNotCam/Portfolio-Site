@@ -12,6 +12,24 @@
   cursor: none !important;
 }
 
+body {
+  background-color: #1C1C1C;
+}
+
+.main-container {
+  width: 100vw;
+  overflow: hidden;
+}
+
+.container {
+  padding: 50px;
+}
+
+.car {
+  width: 50vw;
+  border-radius: 50vh;
+}
+
 :root,
 .bg-default {
   color: rgba(255, 255, 255, 0.87);
@@ -32,26 +50,40 @@
 
 .color-alt,
 .color-alt-hover:hover {
-  color: #EB920C;
+  /* color: #EB920C; */
+  color: #E3B252;
 }
 
 .no-select {
   pointer-events: none;
 }
 
-.background-image {
-  background-image: url('../ok.jpg');
-  background-attachment: fixed;
+.color-alt-gradient {
+  /* background: -webkit-linear-gradient(left, red , yellow);
+  background: -o-linear-gradient(right, red, yellow);
+  background: -moz-linear-gradient(right, red, yellow); */
+  background: linear-gradient(to right, #FBE17F , #CBB043); 
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent
+}
+
+.home {
+  /* background-image: url('../anirudh-EFQg9MocIIY-unsplash.jpg'); */
+  background-image: url('../bg.jpg');
+  /* background-attachment: fixed; */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  width: 100vw;
+  height: 100vh;
 }
 
 /* Credits */
 .credits {
   text-align: left;
-  position: fixed;
-  top: 95vh;
+  position: absolute;
+  top: 3vh;
   left: 1.5vw;
 }
 
@@ -89,29 +121,6 @@
   pointer-events: none;
 }
 
-.circle-animated {
-  position: absolute;
-  left: 700px;
-  top: 250px;
-  transform: translate(-50%, -50%);
-  height: 3em;
-  width: 3em;
-  z-index: 20;
-  background-color: #EB920C;
-  border-radius: 50%;
-  pointer-events: none;
-  animation: move 5s ease-in-out infinite;
-  box-shadow:
-    inset 0 0 30px #fff,
-    inset 20px 0 30px #d7d938,
-    inset -20px 0 30px #ff3407,
-    inset 4px 7px 300px #ff0c00,
-    inset -20px 0 300px #feff88,
-    0 0 50px #fff,
-    -10px 0 80px #f0f,
-    10px 0 80px #0ff
-}
-
 .circle-follow-hovering {
   background-color: white;
 }
@@ -132,4 +141,36 @@
   100% {
     transform: translateX(-5px)
   }
+}
+
+
+/* Socials */
+.socials {
+  position: fixed;
+  top: 50vh;
+  left: 5px;
+
+  /* bottom: 25px; */
+  /* left: 25px; */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  background-color: rgba(25, 25, 25, 0.6);
+  border-radius: 15px;
+  
+	transform: translateY(-50%);
+}
+
+.socials img {
+  width: 40px;
+  height: 40px;
+  margin: 10px 12px;
+  z-index: 5;
+  transition: filter 0.2s;
+}
+
+.socials img:hover {
+  filter: drop-shadow(0 0px 5px white);
 }

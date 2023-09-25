@@ -28,7 +28,8 @@
 }
 
 .nav-link:hover {
-  color: #EB920C;
+  /* color: #EB920C; */
+  color: #E3B252;
 }
 
 .nav-numbered-list {

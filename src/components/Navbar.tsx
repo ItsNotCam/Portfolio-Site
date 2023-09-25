@@ -20,10 +20,12 @@ export const Navbar = (): JSX.Element => {
 	}
 
 	return (
-		<nav className="navbar">
-			<ul className="navbar-list">
-				{pages.map((p, i) => NavItem(p, i))}
-			</ul>
-		</nav>
+		<header>
+			<nav className="navbar">
+				<ul className="navbar-list">
+					{pages.map((p, i) => NavItem(p, i))}
+				</ul>
+			</nav>
+		</header>
 	)
 }
