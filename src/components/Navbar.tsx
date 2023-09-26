@@ -5,7 +5,7 @@ export const Navbar = (): JSX.Element => {
 	]
 	const NavItem = (p: string, i: number): JSX.Element => {
 		return (
-			<li className="nav-item">
+			<li className="nav-item" key={i}>
 				<div className="nav-numbered-list color-light">
 					<span className="nav-text-above">0{i}</span>
 					<a href={`#${p}`}

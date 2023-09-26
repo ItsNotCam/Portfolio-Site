@@ -5,6 +5,7 @@ import { BrowserView } from 'react-device-detect';
 import { Socials } from './components/SocialLinks';
 import { Credits } from './components/home/Credits';
 import { ScrollIcon } from './components/home/ScrollIcon';
+import Weather from './weather/Weather';
 
 
 const App = (): JSX.Element => {
@@ -13,7 +14,8 @@ const App = (): JSX.Element => {
       <section className="home">
         <Navbar />
         <Hero />
-        <Credits />
+        {/* <Credits /> */}
+        {/* <Weather /> */}
         <ScrollIcon />
       </section>
       <section className="about">
@@ -27,7 +29,7 @@ const App = (): JSX.Element => {
       </section>
       <BrowserView>
         <CustomCursor />
-        <Socials />
+        {/* <Socials /> */}
       </BrowserView>
     </div>
   )

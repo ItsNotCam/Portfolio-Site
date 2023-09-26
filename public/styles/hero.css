@@ -16,6 +16,29 @@
 .header-description {
 	font-size: 25px;
 	padding-top: 10px;
+
+	animation: fly-in 1s ease-out;
+	animation-iteration-count: 1;
+}
+
+@-webkit-keyframes fly-in {
+	from { 
+		transform: translatey(30px); 
+		opacity: 0;
+	} to {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+@keyframes fly-in {
+	from { 
+		transform: translatey(30px); 
+		opacity: 0;
+	} to {
+		transform: translateY(0px);
+		opacity: 1;
+	}
 }
 
 .header-md,

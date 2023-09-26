@@ -1,3 +1,5 @@
+import styled from "styled-components"
+
 export const Hero = (): JSX.Element => {
 	return (
 		<div className="centered-container no-select">
