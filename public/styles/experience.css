@@ -1,0 +1,163 @@
+.experience {
+  padding: 5vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5vh;
+  background-color: #121212;
+  overflow-x: hidden;
+}
+
+.experience h1 {
+  padding-top: 2.5vh;
+  padding-bottom: 3.5vh;
+  font-size: 4rem;
+  text-align: center;
+}
+
+.exp-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 15px;
+  border-radius: 10px;
+  max-width: 1280px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+
+  transition: all ease 0.3s;
+}
+
+.exp-description {
+  display: flex;
+  flex-direction: row;
+}
+
+.exp-description p {
+  font-size: 0.6re;
+}
+
+.exp-title-separator {
+  font-size: 1.25rem;
+  color: rgb(131, 131, 131);
+}
+
+.exp-vertical-line {
+  width: 0.2rem;
+  background-color: rgb(103, 103, 103);
+  margin-inline: 1rem;
+}
+
+.exp-p-tag {
+  color:rgb(103, 103, 103);
+}
+
+.exp-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2vh;
+}
+
+.exp-link {
+  padding-bottom: 10px;
+}
+
+.exp-link a {
+  text-decoration: none;
+}
+
+.exp-link a:hover {
+  text-decoration: underline;
+}
+
+.exp-links {
+  margin: 15px 0px;
+}
+
+.exp-links ul {
+  display: flex;
+  flex-direction: row;
+  gap: 1vw;
+}
+
+.exp-card:hover {
+  background-color: rgb(25, 25, 25);
+}
+
+.exp-card h2 {
+  padding-bottom: 5px;
+}
+
+.exp-date {
+  padding-top: 5px;
+  width: 25%;
+  color:rgb(179, 179, 179);
+  max-width: 300px;
+  display: block;
+}
+
+.exp-date-sm {
+  color:rgb(179, 179, 179);
+  padding: 2px;
+  display: none;
+}
+
+.exp-info {
+  width: 85%;
+  flex-direction: column;
+}
+
+.exp-card li {
+  list-style: none;
+}
+
+.exp-tags {
+  margin-top: 10px;
+}
+
+.exp-tags ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.exp-tags li {
+  list-style: none;
+  background-color: rgba(246, 163, 37, 0.5);
+  color: rgb(255, 235, 81);
+  border-radius: 25px;
+  padding: 8px 8px;
+}
+
+.exp-description-container {
+  font-weight: 50;
+  letter-spacing: 0.05rem;
+  color: rgb(199, 199, 199);
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+
+@media only screen and (max-width: 1000px) {
+  .exp-info {
+    width: 100%;
+  }
+
+  .exp-date-sm {
+    display: block;
+  }
+
+  .exp-date {
+    display: none;
+  }
+}
+
+.exp-hidden {
+  opacity: 0.5;
+}

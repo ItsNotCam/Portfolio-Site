@@ -8,7 +8,7 @@
   scroll-behavior: smooth;
   color-scheme: dark;
   font-weight: 300;
-
+  /* overflow-x: hidden; */
   /* cursor: none !important; */
 }
 
@@ -30,6 +30,13 @@ body {
   border-radius: 50vh;
 }
 
+.yep {
+  position: fixed;
+  top: 50vh;
+  left: 10vw;
+}
+
+
 :root,
 .bg-default {
   color: rgba(255, 255, 255, 0.87);
@@ -42,6 +49,10 @@ body {
 
 .bg-color-alt {
   background-color: #EB920C;
+}
+
+.color-alt-brighter {
+  background-color: #ff9901;
 }
 
 .color-dark {

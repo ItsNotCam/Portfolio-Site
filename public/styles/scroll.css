@@ -1,5 +1,6 @@
 #scroll {
   font-size: 12px;
+  overflow-x: show !important;
 }
 
 /* #scroll a {
