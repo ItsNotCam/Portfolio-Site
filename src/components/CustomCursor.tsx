@@ -14,9 +14,7 @@ export const CustomCursor = (): JSX.Element => {
 
 
 	return (
-		<S.div_CustomCursor id="circle-follow" style={mousePos}>
-			<S.div_CustomCursorTwo />
-		</S.div_CustomCursor>
+		<S.div_CustomCursor id="circle-follow" style={mousePos} />
 	)
 }
 
@@ -24,12 +22,10 @@ const S = {
 	div_CustomCursor: styled.div`
 		position: absolute;
 		transform: translate(-50%, -50%);
-		/* height: 1.5em;
-		width: 1.5em; */
-		height: 100vh;
-		width: 100vh;
+		height: 1.5em;
+		width: 1.5em;
 		z-index: 20;
-		/* border: 2px solid #dddd; */
+		border: 2px solid #dddd;
 		border-radius: 50%;
 		pointer-events: none;
 		overflow: hidden !important;

@@ -7,6 +7,9 @@ import { BrowserView } from 'react-device-detect';
 import { ScrollIcon } from './components/home/ScrollIcon';
 // import Weather from './weather/Weather';
 import { Experience } from './components/experience/Experience';
+import { Footer } from './components/Footer'
+import { About } from './components/about/About';
+import { Projects } from './components/projects/Projects';
 
 
 const App = (): JSX.Element => {
@@ -18,9 +21,16 @@ const App = (): JSX.Element => {
         <ScrollIcon />
       </section>
       <section id="about">
+        <About />
+      </section>
+      <section id="projects">
+        <Projects />
       </section>
       <section id="experience">
         <Experience />
+      </section>
+      <section id="contact">
+        <Footer />
       </section>
       <BrowserView>
         <CustomCursor />

@@ -29,9 +29,11 @@ export const ExperienceConst: Array<IExperience> = [
     end_year: "2020",
     logo_path: "BAE.png",
     job_description: `
-      Independently developed a full stack web application from planning to architecture and deployment. 
-      This application included a front end for uploading and viewing data as well as a back end REST API
-      to allow users to integrate the tool into their own automation processes.
+      Independently developed a full stack web application to assist cyber security professionals in 
+      analyzing packet capture data. I was given an empty slate and took the app from planning to 
+      architecture and finally development. This application included a front end for uploading and viewing 
+      data as well as a back end REST API to allow users to integrate the tool into their own 
+      automation processes.
     `,
     company_link: "https://www.baesystems.com/en/home",
     tags: [ "Python", "Javascript", "Flask", "ReactJS", "Material UI", "Bootstrap", "Zeek", 
@@ -52,9 +54,9 @@ export const ExperienceConst: Array<IExperience> = [
     job_description: `
       Lead the design and development of a Windows sytem performance testing tool that
       accurately quantified the performance impacts of various software components on 
-      BAE's standard system image. System Administrators who used this tool reported 
-      time savings in excess of 75%. The resulting data was used to influence future 
-      hardware and software requisition.
+      BAE's standard system image. System Administrators who recorded performance
+      data using this tool reported time savings in excess of 75% over their previous 
+      methods. The resulting data was used to influence future hardware and software requisition.
     `,
     company_link: "https://www.baesystems.com/en/home",
     tags: [ "Windows", "Powershell" ],

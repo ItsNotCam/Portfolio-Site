@@ -16,11 +16,8 @@ export function ExperienceCard(props: IExperience, shown: boolean) {
   const date: string = `${props.start_month} ${props.start_year} - ${props.end_month} ${props.end_year}`;
   return (
     <div className={`exp-card ${!shown ? "exp-hidden" : ""}`}>
-      <div className="exp-date">
-        {date}
-      </div>
       <div className="exp-info">
-        <div className="exp-date-sm">
+        <div className="exp-date">
           {date}
         </div>
         <h2 className="exp-title">
