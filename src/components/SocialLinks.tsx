@@ -9,6 +9,9 @@ export const Socials = (): JSX.Element => {
       <a href="https://www.linkedin.com/in/cameron-young-37b173129/" target="_blank">
         <img src="LinkedIn.png"/>
       </a>
+      <a href="www" target="_blank">
+        <img src="Mail.svg" />
+      </a>
     </S.div_Socials>
   )
 }
