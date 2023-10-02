@@ -10,30 +10,27 @@
 .experience h1 {
   padding-top: 2.5vh;
   padding-bottom: 3.5vh;
-  font-size: 4rem;
+  font-size: 2.5rem;
   text-align: center;
 }
 
 .exp-card {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  padding: 15px;
+  justify-content: center;
   border-radius: 10px;
-  max-width: 1280px;
+  max-width: 900px;
   padding-top: 25px;
   padding-bottom: 25px;
 
   transition: all ease 0.3s;
+  
+  background-color: rgb(25, 25, 25);
 }
 
 .exp-description {
   display: flex;
   flex-direction: row;
-}
-
-.exp-description p {
-  font-size: 0.6re;
 }
 
 .exp-title-separator {
@@ -55,7 +52,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 2vh;
+  cursor: default;
 }
 
 .exp-link {
@@ -82,6 +81,8 @@
 
 .exp-card:hover {
   background-color: rgb(25, 25, 25);
+  transform: scale(102%);
+  filter: drop-shadow(2px 4px 15px #090909);
 }
 
 .exp-card h2 {
@@ -90,7 +91,6 @@
 
 .exp-date {
   padding-top: 5px;
-  width: 25%;
   color:rgb(179, 179, 179);
   max-width: 300px;
   display: block;
@@ -103,7 +103,7 @@
 }
 
 .exp-info {
-  width: 85%;
+  width: 90%;
   flex-direction: column;
 }
 
@@ -127,8 +127,9 @@
   list-style: none;
   background-color: rgba(246, 163, 37, 0.5);
   color: rgb(255, 235, 81);
-  border-radius: 25px;
+  border-radius: 5px;
   padding: 8px 8px;
+  font-size: 0.9rem;
 }
 
 .exp-description-container {
@@ -143,21 +144,12 @@
   gap: 0.25rem;
 }
 
-
-@media only screen and (max-width: 1000px) {
-  .exp-info {
-    width: 100%;
-  }
-
-  .exp-date-sm {
-    display: block;
-  }
-
-  .exp-date {
-    display: none;
-  }
-}
-
 .exp-hidden {
   opacity: 0.5;
+}
+
+@media only screen and (max-width < 700px) {
+  .exp-description p {
+    font-size: 0.75em;
+  }
 }
