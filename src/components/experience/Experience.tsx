@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { ExperienceCard } from './ExperienceCard'
+import ExperienceCard from './ExperienceCard'
 import { ExperienceConst } from './ExperienceConstants'
 
-export const Experience = () => {
+export default function Experience(): JSX.Element {
   const [highlightedIdx, setHighlightedIdx] = useState<number>(-1); 
   return (
     <div className="experience">

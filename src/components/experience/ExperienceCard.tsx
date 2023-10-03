@@ -12,7 +12,7 @@ const TechLink = (tag: ILink, key: any): JSX.Element => {
   )
 }
 
-export function ExperienceCard(props: IExperience, shown: boolean) {
+export default function ExperienceCard(props: IExperience, shown: boolean): JSX.Element {
   const date: string = `${props.start_month} ${props.start_year} - ${props.end_month} ${props.end_year}`;
   return (
     <div className={`exp-card ${!shown ? "exp-hidden" : ""}`}>

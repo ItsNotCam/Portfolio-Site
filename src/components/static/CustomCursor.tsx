@@ -5,7 +5,7 @@ interface IMousePos {
 	top: number;
 }
 
-export const CustomCursor = (): JSX.Element => {
+export default function CustomCursor(): JSX.Element {
 	const [mousePos, setMousePos] = useState<IMousePos>({ left: 0, top: 0 })
 
 	document.addEventListener('mousemove', (e: MouseEvent) => {

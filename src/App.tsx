@@ -1,18 +1,15 @@
-import { Navbar } from './components/Navbar';
-import { CustomCursor } from './components/CustomCursor';
-import { Hero } from './components/home/Hero';
 import { BrowserView } from 'react-device-detect';
-// import { Socials } from './components/SocialLinks';
-// import { Credits } from './components/home/Credits';
-import { ScrollIcon } from './components/home/ScrollIcon';
-// import Weather from './weather/Weather';
-import { Experience } from './components/experience/Experience';
-import { Footer } from './components/Footer'
-import { About } from './components/about/About';
-import { Projects } from './components/projects/Projects';
 
+import Navbar from './components/home/Navbar';
+import CustomCursor from './components/static/CustomCursor';
+import Hero from './components/home/Hero';
+import ScrollIcon from './components/home/ScrollIcon';
+import Experience from './components/experience/Experience';
+import Socials from './components/static/Socials'
+import About from './components/about/About';
+import Projects from './components/projects/Projects';
 
-const App = (): JSX.Element => {
+export default function App(): JSX.Element {
   return (
     <div className="main-container">
       <section className="home">
@@ -29,14 +26,10 @@ const App = (): JSX.Element => {
       <section id="experience">
         <Experience />
       </section>
-      <section id="contact">
-        <Footer />
-      </section>
       <BrowserView>
         <CustomCursor />
+        <Socials />
       </BrowserView>
     </div>
   )
 }
-
-export default App

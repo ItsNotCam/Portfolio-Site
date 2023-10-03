@@ -1,5 +1,8 @@
 .experience {
-  padding: 5vw;
+  /* padding: 8vw; */
+  padding-top: 5vh;
+  padding-inline: 8vw;
+  padding-bottom: 3vh;
   display: flex;
   flex-direction: column;
   gap: 2.5vh;
@@ -18,12 +21,13 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border-radius: 10px;
-  max-width: 900px;
+  border-radius: 8px;
+  max-width: 1100px;
   padding-top: 25px;
   padding-bottom: 25px;
+  padding-inline: 5px;
 
-  transition: all ease 0.3s;
+  transition: all ease 0.2s;
   
   background-color: rgb(25, 25, 25);
 }
@@ -81,8 +85,7 @@
 
 .exp-card:hover {
   background-color: rgb(25, 25, 25);
-  transform: scale(102%);
-  filter: drop-shadow(2px 4px 15px #090909);
+  transform: scale(101%);
 }
 
 .exp-card h2 {

@@ -1,8 +1,9 @@
-export const Navbar = (): JSX.Element => {
+export default function Navbar(): JSX.Element {
 	const pages: Array<string> = [
 		"home", "about", "projects",
 		"experience", "contact"
 	]
+	
 	const NavItem = (p: string, i: number): JSX.Element => {
 		return (
 			<li className="nav-item" key={i}>

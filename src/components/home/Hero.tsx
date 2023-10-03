@@ -1,6 +1,4 @@
-import styled from "styled-components"
-
-export const Hero = (): JSX.Element => {
+export default function Hero(): JSX.Element {
 	return (
 		<div className="centered-container no-select">
 			<h1 className="header-name header-lg">

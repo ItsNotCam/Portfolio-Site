@@ -1,0 +1,128 @@
+.projects {
+  padding-top: 5vh;
+  padding-inline: 8vw;
+  padding-bottom: 3vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5vh;
+  background-color: #121212;
+  overflow-x: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.projects h1 {
+  padding-top: 2.5vh;
+  padding-bottom: 3.5vh;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+
+.project-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0;
+  gap: 15px;
+  grid-auto-flow: row;
+  max-width: 1100px;
+}
+
+.project-card-date {
+  color:rgb(179, 179, 179);
+  font-size: 0.9rem;
+}
+
+.project-card {
+  background-color: rgb(25, 25, 25);
+  padding: 6%;
+  border-radius: 5px;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+
+  transition: transform 0.25s;
+}
+
+.project-card-links {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.project-card h3 {
+  font-size: 1.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.25rem;
+}
+
+.project-card:hover h3 {
+  color: #E3B252;
+}
+
+.project-card p {
+  color:rgb(174, 174, 174);
+  font-size: 1rem;
+}
+
+.project-card li {
+  list-style-type: none;
+}
+
+.project-card-header {
+  margin-bottom: 5px;  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.project-card-icon {
+  font-size: 2.5rem;
+}
+
+.project-card:hover {
+  transform: translateY(-0.3rem);
+}
+
+.project-tech-tags {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 5px;
+}
+
+.project-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.project-color-dark {
+  color: #787878dd;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+
+@media (max-width: 70rem) {
+  .project-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 50rem) {
+  .project-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-card-header {
+    margin-top: -15px;
+  }
+
+  .project-card {
+    padding: 5%;
+  }
+}
