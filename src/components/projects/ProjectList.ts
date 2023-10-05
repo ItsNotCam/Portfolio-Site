@@ -1,4 +1,4 @@
-export interface IProjects {
+export interface IProject {
   location: string,
   affiliated_company?: string,
   name: string,
@@ -9,6 +9,7 @@ export interface IProjects {
   logo_path: string,
   github_links?: Array<ILink>
   tags: Array<string>
+  readme_link?: ILink
 }
 
 export interface ILink {
@@ -16,7 +17,7 @@ export interface ILink {
   name: string;
 }
 
-export const ProjectsConstants: Array<IProjects> = [
+export const PROJECTS: Array<IProject> = [
   {
     location: "Reston, VA",
     affiliated_company: "",
@@ -82,13 +83,13 @@ export const ProjectsConstants: Array<IProjects> = [
   },
   {
     location: "Centreville, VA",
-    name: "Minecraft \'Coordinates Book\' Multiplayer Plugin",
+    name: "\'Coordinates Book\' Minecraft Mod",
     month: "June",
     year: "2018",
     logo_path: "Parsons.png",
     description: `
-      Plugin for the popular game Minecraft. This automates the process of saving your favorite locations
-      within the game, replacing the traditional pen-and-paper methods.
+      Modification for the popular video game Minecraft. This automates the process of saving your favorite locations
+      within the game, replacing traditional pen-and-paper methods.
     `,
     company_link: "https://www.parsons.com",
     tags: [ "Java", "NoSQL" ],
@@ -107,6 +108,7 @@ export const ProjectsConstants: Array<IProjects> = [
     real-time communication between the client and the device.`,
     company_link: "https://www.parsons.com",
     tags: [ "Python", "Typescript", "ReactJS" ],
+    readme_link: { name: "Readme", link: "https://raw.githubusercontent.com/ItsNotCam/HeaterPi-Client/master/README.md" },
     github_links: [ 
       { name: "Client", link: "https://github.com/ItsNotCam/HeaterPi-Client" },
       { name: "Server", link: "https://github.com/ItsNotCam/HeaterPi-Server" }

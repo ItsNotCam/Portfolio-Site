@@ -18,7 +18,7 @@ export interface ILink {
   name: string;
 }
 
-export const ExperienceConst: Array<IExperience> = [
+export const EXPERIENCE: Array<IExperience> = [
   {
     company: "BAE Systems, Inc.",
     location: "Reston, VA",
