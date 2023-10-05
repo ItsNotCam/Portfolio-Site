@@ -7,7 +7,7 @@
   flex-direction: column;
   gap: 2.5vh;
   background-color: #121212;
-  overflow-x: hidden;
+  overflow: hidden !important;
 }
 
 .experience h1 {
@@ -15,6 +15,7 @@
   padding-bottom: 3.5vh;
   font-size: 2.5rem;
   text-align: center;
+  overflow: hidden !important;
 }
 
 .exp-card {
@@ -26,6 +27,7 @@
   padding-top: 25px;
   padding-bottom: 25px;
   padding-inline: 5px;
+  overflow: hidden !important;
 
   transition: all ease 0.5s;
   
@@ -35,21 +37,25 @@
 .exp-description {
   display: flex;
   flex-direction: row;
+  overflow: hidden !important;  
 }
 
 .exp-title-separator {
   font-size: 1.25rem;
   color: rgb(131, 131, 131);
+  overflow: hidden !important;
 }
 
 .exp-vertical-line {
   width: 0.2rem;
   background-color: rgb(103, 103, 103);
   margin-inline: 1rem;
+  overflow: hidden !important;
 }
 
 .exp-p-tag {
   color:rgb(103, 103, 103);
+  overflow: hidden !important;
 }
 
 .exp-cards {
@@ -58,38 +64,46 @@
   align-items: center;
   justify-content: center;
   gap: 2vh;
-  cursor: default;
+  cursor: default;  
+  overflow: hidden !important;
 }
 
 .exp-link {
   padding-bottom: 10px;
+  overflow: hidden !important;
 }
 
 .exp-link a {
   text-decoration: none;
+  overflow: hidden !important;
 }
 
 .exp-link a:hover {
   text-decoration: underline;
+  overflow: hidden !important;
 }
 
 .exp-links {
   margin: 15px 0px;
+  overflow: hidden !important;
 }
 
 .exp-links ul {
   display: flex;
   flex-direction: row;
   gap: 1vw;
+  overflow: hidden !important;
 }
 
 .exp-card:hover {
   background-color: rgb(25, 25, 25);
   transform: scale(101%);
+  overflow: hidden !important;
 }
 
 .exp-card h2 {
   padding-bottom: 5px;
+  overflow: hidden !important;
 }
 
 .exp-date {
@@ -97,25 +111,30 @@
   color:rgb(179, 179, 179);
   max-width: 300px;
   display: block;
+  overflow: hidden !important;
 }
 
 .exp-date-sm {
   color:rgb(179, 179, 179);
   padding: 2px;
   display: none;
+  overflow: hidden !important;
 }
 
 .exp-info {
   width: 90%;
   flex-direction: column;
+  overflow: hidden !important;
 }
 
 .exp-card li {
   list-style: none;
+  overflow: hidden !important;
 }
 
 .exp-tags {
   margin-top: 10px;
+  overflow: hidden !important;
 }
 
 .exp-tags ul {
@@ -124,6 +143,7 @@
   justify-content: left;
   gap: 0.8rem;
   flex-wrap: wrap;
+  overflow: hidden !important;
 }
 
 .exp-tags li {
@@ -133,6 +153,7 @@
   border-radius: 5px;
   padding: 8px 8px;
   font-size: 0.9rem;
+  overflow: hidden !important;
 }
 
 .exp-description-container {
@@ -145,10 +166,12 @@
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  overflow: hidden !important;
 }
 
 .exp-hidden {
   opacity: 0.5;
+  overflow: hidden !important;
 }
 
 @media only screen and (max-width < 700px) {

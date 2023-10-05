@@ -9,6 +9,8 @@
   overflow-x: hidden;
   justify-content: center;
   align-items: center;
+
+  width: 99%;
 }
 
 .projects h1 {
@@ -221,6 +223,19 @@
 
 .markdown p {
   color:rgb(195, 195, 195);
+}
+
+.readme-loading {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+  height: 100%;
 }
 
 @keyframes slide-in-div {
