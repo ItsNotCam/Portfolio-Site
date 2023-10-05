@@ -24,7 +24,7 @@ const S = {
 		transform: translate(-50%, -50%);
 		height: 1.5em;
 		width: 1.5em;
-		z-index: 20;
+		z-index: 9999;
 		border: 2px solid #dddd;
 		border-radius: 50%;
 		pointer-events: none;

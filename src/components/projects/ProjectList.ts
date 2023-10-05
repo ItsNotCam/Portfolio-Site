@@ -7,7 +7,7 @@ export interface IProject {
   description: string,
   company_link: string,
   logo_path: string,
-  github_links?: Array<ILink>
+  github_link?: ILink,
   tags: Array<string>
   readme_link?: ILink
 }
@@ -26,7 +26,7 @@ export const PROJECTS: Array<IProject> = [
     year: "2023",
     logo_path: "BAE.png",
     description: `
-      This website was designed and written by me, Cameron Young. It was developed using ReactJS with Typescript and 
+      This website was designed and written by me. It was developed using ReactJS with Typescript and 
       vanilla CSS (no CSS frameworks used).
     `,
     company_link: "https://www.baesystems.com/en/home",
@@ -59,10 +59,10 @@ export const PROJECTS: Array<IProject> = [
     `,
     company_link: "https://www.parsons.com",
     tags: [ "Python", "Javascript", "ReactJS", "Flask", "Docker" ],
-    github_links: [{
+    github_link: {
         name: "Repo", 
         link: "https://github.com/ItsNotCam/File-Server" 
-    }]
+    }
   },
   {
     location: "Centreville, VA",
@@ -76,10 +76,10 @@ export const PROJECTS: Array<IProject> = [
     `,
     company_link: "https://www.parsons.com",
     tags: [ "C#", "WebSockets", "Multiprocessing" ],
-    github_links: [{
+    github_link: {
       name: "Repo",
       link: "https://github.com/ItsNotCam/BitwatchVR"
-    }] 
+    }
   },
   {
     location: "Centreville, VA",
@@ -93,10 +93,10 @@ export const PROJECTS: Array<IProject> = [
     `,
     company_link: "https://www.parsons.com",
     tags: [ "Java", "NoSQL" ],
-    github_links: [{
+    github_link: {
       name: "Repo",
       link: "https://github.com/ItsNotCam/MC-CoordinatesBook"
-    }]
+    }
   },
   {
     location: "Centreville, VA",
@@ -109,9 +109,6 @@ export const PROJECTS: Array<IProject> = [
     company_link: "https://www.parsons.com",
     tags: [ "Python", "Typescript", "ReactJS" ],
     readme_link: { name: "Readme", link: "https://raw.githubusercontent.com/ItsNotCam/HeaterPi-Client/master/README.md" },
-    github_links: [ 
-      { name: "Client", link: "https://github.com/ItsNotCam/HeaterPi-Client" },
-      { name: "Server", link: "https://github.com/ItsNotCam/HeaterPi-Server" }
-    ]
+    github_link:  { name: "Repo", link: "https://github.com/ItsNotCam/HeaterPi-Client" },
   }
 ]

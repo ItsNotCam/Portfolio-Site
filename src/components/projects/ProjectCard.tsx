@@ -16,8 +16,8 @@ const TechTag = (tag: {tag: string}): JSX.Element => {
 }
 
 export default function ProjectCard(props: IProjectCardProps): JSX.Element {
-  const [readme, setReadme] = useState<string>("");
-  const [gettingReadme, setGettingReadme] = useState<boolean>(false);
+  const [readme, setReadme] = useState<string | null>(null);
+  const [isGettingReadme, setIsGettingReadme] = useState<boolean>(false);
   
   const UpdateReadme = (text: string): void => {   
     setReadme(text);
@@ -25,35 +25,34 @@ export default function ProjectCard(props: IProjectCardProps): JSX.Element {
   }
   
   const OpenReadme = () => {
-    if(readme.length < 1) {
+    if(readme === null) {
       let readme_link: string = PROJECT.readme_link?.link ?? "";
-      setGettingReadme(true);
+      setIsGettingReadme(true);
       
       fetch(readme_link)
         .then(res => res.text())
         .then(text => UpdateReadme(text))
         .catch(() => {
           const failedText: string = `# Failed to retrieve README file from GitHub. 
-          Please visit the GitHub link to read more about this project.`;
-          setReadme(failedText);
+          Please exit and visit the GitHub link to read more about this project.`;
           props.setReadmeContent(failedText);
+          setReadme(null);
         })
-        .finally(() => setGettingReadme(false));
+        .finally(() => setIsGettingReadme(false));
     } else {
       props.setReadmeContent(readme);
     }
   }
   
   const { project: PROJECT } = props;
-  const link: ILink | null = PROJECT.github_links ? PROJECT.github_links[0] : null;
   return (
     <>
       <div className="project-card-header" id={PROJECT.name.replaceAll(" ", "_")}>
         <CodeOutlined className="color-light" style={styles.folderStyle}/>
         <div className="project-card-links">
           {
-            link !== null ? (
-              <a href={link.link} target="_blank">
+            PROJECT.github_link !== null ? (
+              <a href={PROJECT.github_link?.link} target="_blank">
                 <GitHub className="color-light color-alt-hover" style={styles.githubStyle}/>
               </a>
             ) : null
@@ -76,7 +75,7 @@ export default function ProjectCard(props: IProjectCardProps): JSX.Element {
         </ul>
         <p>{PROJECT.description}</p>
       </div>
-      { gettingReadme ? <h1>Loading Readme...</h1> : null }
+      { isGettingReadme ? <h1>Loading Readme...</h1> : null }
     </>
   )
 }

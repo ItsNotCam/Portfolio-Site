@@ -6,10 +6,14 @@ import ProjectCard, { IProjectCardProps } from "./ProjectCard";
 import { IProject, PROJECTS } from "./ProjectList";
 import { uuidv4 } from "../../utilities";
 
+import TransitEnterexitOutlinedIcon from '@mui/icons-material/TransitEnterexitOutlined';
+import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
+
 
 export default function Projects(): JSX.Element {
   const [highlightedIdx, setHighlightedIdx] = useState<number>(-1);
   const [readmeContent, setReadmeContent] = useState<string | null>(null);
+  const [canCloseReadme, setCanCloseReadme] = useState<boolean>(false);
 
   const DrawProjectCard = (props: {PROJECT: IProject, index: number}): JSX.Element => {
     let projectProps: IProjectCardProps = {
@@ -31,14 +35,35 @@ export default function Projects(): JSX.Element {
     )
   }
 
+  // can only close the readme if the user has clicked on the x button or the outer div
+  const tryCloseReadme = () => {
+    if(canCloseReadme) {
+      setReadmeContent(null);
+    }
+  }
+
+  let mouseContext: any = {
+    onMouseEnter: () => setCanCloseReadme(false),
+    onMouseLeave: () => setCanCloseReadme(true)
+  }
+
   return (
     <div className="projects">
       <h1><span className="color-alt">What</span> I've Made</h1>
       {
-        readmeContent !== null && readmeContent.length > 0 ? (
-          <Markdown remarkPlugins={[remarkGfm]} className="markdown">
-            {readmeContent} 
-          </Markdown>
+        readmeContent !== null ? (
+          <div className="overlay-dark" onClick={tryCloseReadme}>
+            <button className="md-icon-button color-light" onClick={() => setReadmeContent(null)}>
+              <ClearOutlinedIcon style={{fontSize: "2rem"}}/>
+            </button>
+            <div className="markdown" {...mouseContext}>
+              <Markdown remarkPlugins={[remarkGfm]} className="slide-in">
+                {readmeContent}
+              </Markdown>
+              <br/>
+              <i className="color-light" style={{opacity: 0.5}}>(Pulled directly from this repo's README)</i>
+            </div>
+          </div>
         ) : null
       }
       {
