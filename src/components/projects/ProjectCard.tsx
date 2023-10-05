@@ -1,6 +1,6 @@
-import { GitHub, Propane } from "@mui/icons-material";
-import { CodeOutlined, LaunchOutlined, InfoOutlined } from '@mui/icons-material';
+import { GitHub, CodeOutlined, LaunchOutlined, InfoOutlined } from '@mui/icons-material';
 import React, { useState } from "react";
+import CircularProgress from '@mui/material/CircularProgress';
 
 import { IProject } from "./ProjectList";
 import { uuidv4 } from '../../utilities';
@@ -9,6 +9,7 @@ export interface IProjectCardProps {
   project: IProject,
   shown: boolean,
   setReadmeContent: (content: string) => void;
+  setShowReadmeContent: (show: boolean) => void;
 }
 
 export default function ProjectCard(props: IProjectCardProps): JSX.Element {
@@ -19,6 +20,7 @@ export default function ProjectCard(props: IProjectCardProps): JSX.Element {
   const UpdateReadme = (text: string): void => {   
     setReadme(text);
     props.setReadmeContent(text); 
+    props.setShowReadmeContent(true);
   }
   
   const OpenReadme = () => {
@@ -35,7 +37,7 @@ export default function ProjectCard(props: IProjectCardProps): JSX.Element {
         .catch(() => {
           const failedText: string = `# Failed to retrieve README file from GitHub. 
           Please exit and visit the GitHub link to read more about this project.`;
-          props.setReadmeContent(failedText);
+          UpdateReadme(failedText);
           setReadme(null);
         })
         .finally(() => setIsGettingReadme(false));
@@ -87,7 +89,15 @@ export default function ProjectCard(props: IProjectCardProps): JSX.Element {
         </ul>
         <p>{PROJECT.description}</p>
       </div>
-      { isGettingReadme ? <h1>Loading Readme...</h1> : null }
+      
+      { isGettingReadme ? 
+        (
+          <div className="readme-loading">
+            <CircularProgress /> 
+          </div>
+        )
+        : null
+      }
     </>
   )
 }

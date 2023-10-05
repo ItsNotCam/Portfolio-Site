@@ -7,18 +7,20 @@ import { IProject, PROJECTS } from "./ProjectList";
 import { uuidv4 } from "../../utilities";
 
 import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
-
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
 export default function Projects(): JSX.Element {
   const [highlightedIdx, setHighlightedIdx] = useState<number>(-1);
   const [readmeContent, setReadmeContent] = useState<string | null>(null);
+  const [showReadmeContent, setShowReadmeContent] = useState<boolean>(false);
   const [canCloseReadme, setCanCloseReadme] = useState<boolean>(false);
 
   const DrawProjectCard = (props: {PROJECT: IProject, index: number}): JSX.Element => {
     let projectProps: IProjectCardProps = {
       project: props.PROJECT,
       shown: highlightedIdx === props.index || highlightedIdx === -1,
-      setReadmeContent: setReadmeContent
+      setReadmeContent: setReadmeContent,
+      setShowReadmeContent: setShowReadmeContent
     }
 
     let id: string = props.PROJECT.name.replaceAll(" ", "_");
@@ -37,7 +39,7 @@ export default function Projects(): JSX.Element {
   // can only close the readme if the user has clicked on the x button or the outer div
   const tryCloseReadme = () => {
     if(canCloseReadme) {
-      setReadmeContent(null);
+      setShowReadmeContent(false);
     }
   }
 
@@ -46,11 +48,14 @@ export default function Projects(): JSX.Element {
     onMouseLeave: () => setCanCloseReadme(true)
   }
 
+  // stop body scrolling when readme content is showing
+  showReadmeContent ? disableBodyScroll(document.body) : enableBodyScroll(document.body);
+
   return (
     <div className="projects">
       <h1><span className="color-alt">What</span> I've Made</h1>
       {
-        readmeContent !== null ? (
+        showReadmeContent ? (
           <div className="overlay-dark" onClick={tryCloseReadme}>
             <ClearOutlinedIcon 
               className="md-icon-button color-light" 
