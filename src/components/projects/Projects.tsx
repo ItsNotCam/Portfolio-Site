@@ -6,7 +6,6 @@ import ProjectCard, { IProjectCardProps } from "./ProjectCard";
 import { IProject, PROJECTS } from "./ProjectList";
 import { uuidv4 } from "../../utilities";
 
-import TransitEnterexitOutlinedIcon from '@mui/icons-material/TransitEnterexitOutlined';
 import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
 
 
@@ -53,9 +52,10 @@ export default function Projects(): JSX.Element {
       {
         readmeContent !== null ? (
           <div className="overlay-dark" onClick={tryCloseReadme}>
-            <button className="md-icon-button color-light" onClick={() => setReadmeContent(null)}>
-              <ClearOutlinedIcon style={{fontSize: "2rem"}}/>
-            </button>
+            <ClearOutlinedIcon 
+              className="md-icon-button color-light" 
+              style={{fontSize: "3rem"}} 
+              onClick={() => setReadmeContent(null)}/>
             <div className="markdown" {...mouseContext}>
               <Markdown remarkPlugins={[remarkGfm]} className="slide-in">
                 {readmeContent}

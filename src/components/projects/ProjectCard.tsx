@@ -1,8 +1,8 @@
-import { GitHub } from "@mui/icons-material";
-import { CodeOutlined, LaunchOutlined } from '@mui/icons-material';
+import { GitHub, Propane } from "@mui/icons-material";
+import { CodeOutlined, LaunchOutlined, InfoOutlined } from '@mui/icons-material';
 import React, { useState } from "react";
 
-import { ILink, IProject } from "./ProjectList";
+import { IProject } from "./ProjectList";
 import { uuidv4 } from '../../utilities';
 
 export interface IProjectCardProps {
@@ -11,21 +11,21 @@ export interface IProjectCardProps {
   setReadmeContent: (content: string) => void;
 }
 
-const TechTag = (tag: {tag: string}): JSX.Element => {
-  return <li className="project-color-dark"><i>{tag.tag}</i></li>
-}
-
 export default function ProjectCard(props: IProjectCardProps): JSX.Element {
   const [readme, setReadme] = useState<string | null>(null);
   const [isGettingReadme, setIsGettingReadme] = useState<boolean>(false);
-  
+  const hasLinks: boolean = props.project.github_link !== null || props.project.readme_link !== null || props.project.demo_link !== null;  
+
   const UpdateReadme = (text: string): void => {   
     setReadme(text);
     props.setReadmeContent(text); 
   }
   
   const OpenReadme = () => {
-    if(readme === null) {
+    console.log(readme);
+    if(readme) {
+      props.setReadmeContent(readme);
+    } else {
       let readme_link: string = PROJECT.readme_link?.link ?? "";
       setIsGettingReadme(true);
       
@@ -39,8 +39,12 @@ export default function ProjectCard(props: IProjectCardProps): JSX.Element {
           setReadme(null);
         })
         .finally(() => setIsGettingReadme(false));
-    } else {
-      props.setReadmeContent(readme);
+    }
+  }
+
+  const OpenDemo = () => {
+    if(PROJECT.demo_link) {
+      window.open(PROJECT.demo_link.link, "_blank") 
     }
   }
   
@@ -49,20 +53,28 @@ export default function ProjectCard(props: IProjectCardProps): JSX.Element {
     <>
       <div className="project-card-header" id={PROJECT.name.replaceAll(" ", "_")}>
         <CodeOutlined className="color-light" style={styles.folderStyle}/>
-        <div className="project-card-links">
-          {
-            PROJECT.github_link !== null ? (
-              <a href={PROJECT.github_link?.link} target="_blank">
-                <GitHub className="color-light color-alt-hover" style={styles.githubStyle}/>
-              </a>
-            ) : null
-          }
-          {
-            PROJECT.readme_link ? (
-              <LaunchOutlined className="color-light color-alt-hover" style={styles.githubStyle} onClick={OpenReadme}/>
-            ) : null
-          }
-        </div>
+        {hasLinks ? (
+          <div className="project-card-links">
+            {
+              PROJECT.github_link ? (
+                <a href={PROJECT.github_link?.link} target="_blank">
+                  <GitHub className="color-light color-alt-hover" style={styles.githubStyle} titleAccess="Open GitHub Repository"/>
+                </a>
+              ) : null
+            }
+            {
+              PROJECT.readme_link ? (
+                <InfoOutlined className="color-light color-alt-hover" style={styles.githubStyle} onClick={OpenReadme} titleAccess="Show Info"/>
+              ) : null
+            }
+            {
+              PROJECT.demo_link ? (
+                <LaunchOutlined className="color-light color-alt-hover" style={styles.githubStyle} onClick={OpenDemo}  titleAccess="Open Demo"/>
+              ) : null
+            }
+          </div>
+          ) : null
+        }
       </div>
       <div className="project-card-body">
         <h3>{PROJECT.name}</h3>

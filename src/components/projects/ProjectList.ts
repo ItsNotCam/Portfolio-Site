@@ -9,7 +9,8 @@ export interface IProject {
   logo_path: string,
   github_link?: ILink,
   tags: Array<string>
-  readme_link?: ILink
+  readme_link?: ILink,
+  demo_link?: ILink
 }
 
 export interface ILink {
@@ -45,7 +46,7 @@ export const PROJECTS: Array<IProject> = [
       in a NoSQL database.
     `,
     company_link: "https://www.baesystems.com/en/home",
-    tags: [ "Python", "Javascript", "Flask", "ReactJS", "Docker" ],
+    tags: [ "Python", "Javascript", "Flask", "ReactJS", "Docker" ]
   },
   {
     location: "Centreville, VA",
@@ -110,5 +111,6 @@ export const PROJECTS: Array<IProject> = [
     tags: [ "Python", "Typescript", "ReactJS" ],
     readme_link: { name: "Readme", link: "https://raw.githubusercontent.com/ItsNotCam/HeaterPi-Client/master/README.md" },
     github_link:  { name: "Repo", link: "https://github.com/ItsNotCam/HeaterPi-Client" },
+    demo_link: {link: "https://www.google.com", name: "Demo"}
   }
 ]

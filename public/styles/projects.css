@@ -138,7 +138,7 @@
   display: flex;
   flex-direction: column;
 
-  max-height: 80vh;
+  max-height: 85vh;
   overflow-y: auto;
 
   animation: slide-in-div 0.5s normal ease;
@@ -162,6 +162,12 @@
 
 .md-icon-button:hover {
   color: #E3B252;/*rgba(195, 195, 195, 0.7)*/
+}
+
+
+.markdown h1 {
+  border-bottom: 2px solid rgba(195, 195, 195, 0.7);
+  margin-bottom: 2rem;
 }
 
 .markdown h2 {
