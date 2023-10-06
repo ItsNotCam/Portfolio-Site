@@ -143,8 +143,12 @@
   max-height: 85vh;
   overflow-y: auto;
 
-  animation: slide-in-div 0.5s normal ease;
+  animation: slide-in 0.5s normal ease;
   /* animation-fill-mode: forwards; */
+}
+
+.slide-out {
+  animation: slide-out 0.5s normal ease;
 }
 
 .md-icon-button {
@@ -238,13 +242,23 @@
   height: 100%;
 }
 
-@keyframes slide-in-div {
+@keyframes slide-in {
   from {
     transform: translateX(100%);
   }
 
   to {
     transform: translateY(0%);
+  }
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateY(0%);
+  }
+  
+  to {
+    transform: translateX(125%);
   }
 }
 

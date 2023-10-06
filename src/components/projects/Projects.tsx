@@ -39,7 +39,12 @@ export default function Projects(): JSX.Element {
   // can only close the readme if the user has clicked on the x button or the outer div
   const tryCloseReadme = () => {
     if(canCloseReadme) {
-      setShowReadmeContent(false);
+      let md: HTMLElement | null = document.getElementById("markdown");
+      md?.classList.add("slide-out");
+      setTimeout(() => {
+        md?.classList.remove("slide-out");
+        setShowReadmeContent(false);
+      }, 400);
     }
   }
 
@@ -59,9 +64,8 @@ export default function Projects(): JSX.Element {
           <div className="overlay-dark" onClick={tryCloseReadme}>
             <ClearOutlinedIcon 
               className="md-icon-button color-light" 
-              style={{fontSize: "3rem"}} 
-              onClick={() => setReadmeContent(null)}/>
-            <div className="markdown" {...mouseContext}>
+              style={{fontSize: "3rem"}} />
+            <div className="markdown" {...mouseContext} id="markdown">
               <Markdown remarkPlugins={[remarkGfm]} className="slide-in">
                 {readmeContent}
               </Markdown>
