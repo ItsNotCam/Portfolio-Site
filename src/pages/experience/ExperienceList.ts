@@ -38,9 +38,7 @@ export const EXPERIENCE: Array<IExperience> = [
     company_link: "https://www.baesystems.com/en/home",
     tags: [ "Python", "Javascript", "Flask", "ReactJS", "Material UI", "Bootstrap", "Zeek", 
       "Docker", "Docker Compose", "NoSQL" ],
-    links: [ 
-      // { name: "Project: PCAP Extractor", link: "#PCAP_Extractor"  },
-    ]
+    links: [ ]
   },
   {
     company: "BAE Systems, Inc.",
@@ -60,9 +58,7 @@ export const EXPERIENCE: Array<IExperience> = [
     `,
     company_link: "https://www.baesystems.com/en/home",
     tags: [ "Windows", "Powershell" ],
-    links: [ 
-      // { name: "Company", link: "https://www.baesystems.com/en/home" },
-    ]
+    links: [ ]
   },
   {
     company: "Parsons Corporation",
@@ -80,8 +76,6 @@ export const EXPERIENCE: Array<IExperience> = [
     `,
     company_link: "https://www.parsons.com",
     tags: [ "Python", "Flask", "Docker", "Docker Compose", "Unix" ],
-    links: [ 
-      // { name: "Company", link: "https://www.parsons.com" }
-    ]
+    links: [ ]
   }
 ]
