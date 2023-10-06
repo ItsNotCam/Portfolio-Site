@@ -20,11 +20,6 @@ body {
   width: 99%;
 }
 
-.main-container {
-  width: 100vw;
-  overflow: hidden;
-}
-
 .container {
   padding: 50px;
   overflow: hidden;
