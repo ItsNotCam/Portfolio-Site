@@ -14,6 +14,7 @@
 
 body {
   background-color: #1C1C1C;
+  /* background-color: red; */
 }
 
 .the-rest {
@@ -21,7 +22,7 @@ body {
 }
 
 .container {
-  padding: 50px;
+  /* padding: 50px; */
   overflow: hidden;
 }
 
@@ -35,7 +36,6 @@ body {
   top: 50vh;
   left: 10vw;
 }
-
 
 :root,
 .bg-default {
@@ -156,12 +156,24 @@ body {
   filter: drop-shadow(0 0px 5px white);
 }
 
-#weather {
-  position: absolute;
-  top: 5vh;
-  right: 70vw;
-}
-
 .overlay {
   z-index: 9999
+}
+
+/* Footer */
+.footer {
+  /* background-color: red; */
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  margin-inline: 5rem;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }

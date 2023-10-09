@@ -1,21 +1,24 @@
 .projects {
-  padding-top: 5vh;
+  margin: 0;
+  padding-top: 10vh;
   padding-inline: 8vw;
-  padding-bottom: 3vh;
+  padding-bottom: 5vh;
   display: flex;
   flex-direction: column;
   gap: 2.5vh;
   background-color: #121212;
-  overflow-x: hidden;
+  /* background-color: rebeccapurple; */
+  /* overflow-x: hidden; */
   justify-content: center;
   align-items: center;
 
-  width: 99%;
+  width: 100vw;
+
+  /* width: 99%; */
 }
 
 .projects h1 {
-  padding-top: 2.5vh;
-  padding-bottom: 3.5vh;
+  padding-bottom: 2vh;
   font-size: 2.5rem;
   text-align: center;
 }

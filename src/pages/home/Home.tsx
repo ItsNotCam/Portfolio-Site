@@ -4,7 +4,7 @@ import ScrollIcon from "./ScrollIcon";
 
 export default function Home() {
   return (
-      <section className="home">
+      <section className="home" id="home">
         <Navbar />
         <Hero />
         <ScrollIcon />

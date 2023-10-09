@@ -35,9 +35,8 @@ export const PROJECTS: Array<IProject> = [
     month: "Dec",
     year: "2019",
     description: `
-      Containerized full stack web application developed for BAE Systems, Inc.
-      This application extracts information from packet capture files and stores them
-      in a NoSQL database.
+      Full stack web application developed for BAE Systems, Inc. It extracts information from packet capture files 
+      and stores them in a NoSQL database. Exposes an API for integration into other internal tools.
     `,
     company_link: "https://www.baesystems.com/en/home",
     tags: [ "Python", "Javascript", "Flask", "ReactJS", "Docker" ]

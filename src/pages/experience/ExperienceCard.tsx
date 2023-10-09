@@ -23,8 +23,9 @@ export default function ExperienceCard(props: IExperienceCardProps): JSX.Element
   const {experience: EXPERIENCE, shown} = props;
 
   const date: string = `${EXPERIENCE.start_month} ${EXPERIENCE.start_year} - ${EXPERIENCE.end_month} ${EXPERIENCE.end_year}`;
+  // <div className={`exp-card ${!shown ? "exp-hidden" : ""}`}>
   return (
-    <div className={`exp-card ${!shown ? "exp-hidden" : ""}`}>
+    <div className={`exp-card`}>
       <div className="exp-info">
         <div className="exp-date">
           {date}

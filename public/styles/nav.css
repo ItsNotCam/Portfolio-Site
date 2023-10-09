@@ -3,7 +3,7 @@
   flex-direction: row;
   user-select: none;
   font-size: 20px;
-  padding: 4vh 4vw;
+  /* padding: 4vh 4vw; */
   justify-content: center;
   align-items: center;
 }
@@ -43,4 +43,33 @@
   float: right;
   text-align: right;
   opacity: 75%;
+}
+
+.nav-sticky {
+  padding: 3vh 4vw;
+
+  position: fixed;
+  top: 0;
+  width: 100vw;
+
+  background-color: rgba(23, 23, 23, 0.5);
+  margin-top: -25px;
+
+  animation: slidein 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.nav-static {
+  padding: 4vh 4vw;
+  width: 100vw;
+  top: 0;
+}
+
+@keyframes slidein {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
 }

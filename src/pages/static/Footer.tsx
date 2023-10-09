@@ -1,19 +1,13 @@
-import { GitHub, LinkedIn, Email } from '@mui/icons-material';
-import React from 'react';
+import { GitHub, LinkedIn, Email, StickyNote2Outlined } from '@mui/icons-material';
 
-export default function Socials() {
-  const iconStyle: React.CSSProperties = {
-    transition: "transform 0.25s",
-    fontSize: "1.8rem",
-  }
+const iconStyle: React.CSSProperties = {
+  transition: "transform 0.25s",
+  fontSize: "2.5rem",
+}
 
-
-  return (<>
-    <div className='lol'>
-      <div className="contact-line overlay bg-color-light" style={{opacity: 0.5}} />
-      <p style={{opacity: 0.7}} >Written by Cameron Young</p>
-    </div>
-    <div className="contact overlay">
+export default function Footer(): JSX.Element {
+  return (
+    <div className="footer" id="contact">
       <a href="https://github.com/ItsNotCam" target="_blank">
         <GitHub htmlColor='white' className="color-alt-hover social-icon" style={iconStyle} titleAccess="My GitHub"/>
       </a>
@@ -23,7 +17,9 @@ export default function Socials() {
       <a href="mailto:cyoung35@gmu.edu" target="_blank">
         <Email htmlColor='white' className="color-alt-hover social-icon" style={iconStyle} titleAccess="Email Me"/>
       </a>
-      <div className="contact-line overlay bg-color-light" style={{opacity: 0.5}} />
+      <a href="mailto:cyoung35@gmu.edu" target="_blank">
+        <StickyNote2Outlined htmlColor='white' className="color-alt-hover social-icon" style={iconStyle} titleAccess="View Resume"/>
+      </a>
     </div>
-  </>)
+  )
 }

@@ -1,32 +1,48 @@
+import { useState } from "react";
+import { uuidv4 } from "../../utilities"
+
+const NavItem = (props: {p: string, i: number}): JSX.Element => {
+	const {p,i} = props;
+	return (
+		<li className="nav-item" key={i}>
+			<div className="nav-numbered-list color-light">
+				<span className="nav-text-above">0{i}</span>
+				<a href={`#${p}`}
+					className="nav-link color-light"
+					id={`nav-hover-${i}`}
+					key={uuidv4()}
+				>// {p}
+				</a>
+			</div>
+		</li>
+	)
+}
+
+const pages: Array<string> = [
+	"home", "about", "projects",
+	"experience", "contact"
+]
+
 export default function Navbar(): JSX.Element {
-	const pages: Array<string> = [
-		"home", "about", "projects",
-		"experience", "contact"
-	]
+	const [navIsSticky, setNavIsSticky] = useState<boolean>(false);
 	
-	const NavItem = (p: string, i: number): JSX.Element => {
-		return (
-			<li className="nav-item" key={i}>
-				<div className="nav-numbered-list color-light">
-					<span className="nav-text-above">0{i}</span>
-					<a href={`#${p}`}
-						className="nav-link color-light"
-						id={`nav-hover-${i}`}
-						key={i}
-					>// {p}
-					</a>
-				</div>
-			</li>
-		)
+	window.onscroll = () => {
+		if(window.scrollY > 500)
+			setNavIsSticky(true);
+		else if(window.scrollY < 50)
+			setNavIsSticky(false);
 	}
+
 
 	return (
 		<header>
-			<nav className="navbar">
-				<ul className="navbar-list">
-					{pages.map((p, i) => NavItem(p, i))}
-				</ul>
-			</nav>
+			<div className={navIsSticky ? "nav-sticky overlay" : "nav-static overlay"}>
+				<nav className="navbar" id="navbar">
+					<ul className="navbar-list">
+						{pages.map((p, i) => <NavItem p={p} i={i} key={uuidv4()}/>)}
+					</ul>
+				</nav>
+			</div>
 		</header>
 	)
 }
