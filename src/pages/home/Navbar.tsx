@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { uuidv4 } from "../../utilities"
 
-const NavItem = (props: {p: string, i: number}): JSX.Element => {
-	const {p,i} = props;
+const NavItem = (props: {page: string, index: number}): JSX.Element => {
+	const {page: p, index: i} = props;
 	return (
 		<li className="nav-item" key={i}>
 			<div className="nav-numbered-list color-light">
@@ -20,7 +20,7 @@ const NavItem = (props: {p: string, i: number}): JSX.Element => {
 
 const pages: Array<string> = [
 	"home", "about", "projects",
-	"experience", "contact"
+	"experience"//, "contact"
 ]
 
 export default function Navbar(): JSX.Element {
@@ -36,10 +36,10 @@ export default function Navbar(): JSX.Element {
 
 	return (
 		<header>
-			<div className={navIsSticky ? "nav-sticky overlay" : "nav-static overlay"}>
+			<div className={navIsSticky ? "nav-sticky" : "nav-static"}>
 				<nav className="navbar" id="navbar">
 					<ul className="navbar-list">
-						{pages.map((p, i) => <NavItem p={p} i={i} key={uuidv4()}/>)}
+						{pages.map((p, i) => <NavItem page={p} index={i} key={uuidv4()}/>)}
 					</ul>
 				</nav>
 			</div>
