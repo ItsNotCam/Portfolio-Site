@@ -47,7 +47,7 @@ export const PROJECTS: Array<IProject> = [
     year: "2020",
     description: `
       Containerized full stack web application that allows me to manipulate the file 
-      system of my home lab.
+      system of my home server.
     `,
     tags: [ "Python", "Javascript", "Flask","ReactJS", "Docker" ],
     github_link: {
