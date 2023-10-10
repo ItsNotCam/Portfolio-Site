@@ -15,7 +15,7 @@ export default function Projects(): JSX.Element {
   const [showReadmeContent, setShowReadmeContent] = useState<boolean>(false);
   const [canCloseReadme, setCanCloseReadme] = useState<boolean>(false);
 
-  const DrawProjectCard = (props: {PROJECT: IProject, index: number}): JSX.Element => {
+  const DrawElement = (props: {PROJECT: IProject, index: number}): JSX.Element => {
     let projectProps: IProjectCardProps = {
       project: props.PROJECT,
       shown: highlightedIdx === props.index || highlightedIdx === -1,
@@ -57,32 +57,26 @@ export default function Projects(): JSX.Element {
   showReadmeContent ? disableBodyScroll(document.body) : enableBodyScroll(document.body);
 
   return (
-    <section id="projects">
-      <div className="projects">
-        <h1><span className="color-alt">What</span> I've Made</h1>
-        {
-          showReadmeContent ? (
-            <div className="overlay-dark" onClick={tryCloseReadme}>
-              <ClearOutlinedIcon 
-                className="md-icon-button color-light" 
-                style={{fontSize: "3rem", zIndex: 9999}} />
-              <div className="markdown" {...mouseContext} id="markdown">
-                <Markdown remarkPlugins={[remarkGfm]} className="slide-in">
-                  {readmeContent}
-                </Markdown>
-                <br/>
-                <i className="color-light" style={{opacity: 0.5}}>(Pulled directly from this repo's README)</i>
-              </div>
+    <section id="projects" className="projects">
+      <h1><span className="color-alt">What</span> I've Made</h1>
+      {
+        showReadmeContent ? (
+          <div className="overlay-dark" onClick={tryCloseReadme}>
+            <ClearOutlinedIcon className="md-icon-button color-light" style={{fontSize: "3rem"}} />
+            <div className="markdown" {...mouseContext} id="markdown">
+              <Markdown remarkPlugins={[remarkGfm]} className="slide-in">
+                {readmeContent}
+              </Markdown>
+              <br/>
+              <i className="color-light" style={{opacity: 0.5}}>(Pulled directly from this repo's README)</i>
             </div>
-          ) : null
-        }
-        {
-          <div className="project-cards" id="project-div-ok">
-            {PROJECTS.map((PROJECT, index) => (
-              <DrawProjectCard PROJECT={PROJECT} index={index} key={uuidv4()} />
-            ))}
           </div>
-        }
+        ) : null
+      }
+      <div className="project-cards" id="project-div-ok">
+        {PROJECTS.map((PROJECT, index) => (
+          <DrawElement PROJECT={PROJECT} index={index} key={uuidv4()} />
+        ))}
       </div>
     </section>
   )

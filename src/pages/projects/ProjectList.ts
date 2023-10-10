@@ -80,7 +80,11 @@ export const PROJECTS: Array<IProject> = [
     tags: [ "Java", "NoSQL" ],
     github_link: {
       name: "Repo",
-      link: "https://github.com/ItsNotCam/MC-CoordinatesBook"
+      link: "https://github.com/ItsNotCam/MC-Coordinates-Book"
+    },
+    readme_link: {
+      link: "https://raw.githubusercontent.com/ItsNotCam/MC-Coordinates-Book/master/README.md",
+      name: "Readme"
     }
   },
   {

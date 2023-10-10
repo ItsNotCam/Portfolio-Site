@@ -4,6 +4,6 @@ export default function About(): JSX.Element {
       <h1> 
         <span className="color-alt">Who</span> I am
       </h1>
-  </section>
+    </section>
   )
 }

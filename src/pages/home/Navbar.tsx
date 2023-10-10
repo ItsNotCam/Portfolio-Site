@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { uuidv4 } from "../../utilities"
 
-const NavItem = (props: {page: string, index: number, sticky: boolean}): JSX.Element => {
+interface INavItemProps {
+	page: string;
+	index: number;
+	sticky: boolean;
+}
+
+const NavItem = (props: INavItemProps): JSX.Element => {
 	const {page, index, sticky} = props;
 	return (
 		<li className="nav-item" key={index}>

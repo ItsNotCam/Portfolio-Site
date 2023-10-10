@@ -7,14 +7,10 @@
   flex-direction: column;
   gap: 2.5vh;
   background-color: #121212;
-  /* background-color: rebeccapurple; */
-  /* overflow-x: hidden; */
   justify-content: center;
   align-items: center;
 
-  width: 100vw;
-
-  /* width: 99%; */
+  /* width: 100vw; */
 }
 
 .projects h1 {
