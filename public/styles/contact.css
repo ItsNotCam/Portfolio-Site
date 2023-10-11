@@ -40,6 +40,9 @@
   writing-mode: vertical-lr;
   text-orientation: mixed;
   transform: scale(-1);
+
+  cursor: default;
+  pointer-events: none;
   
   z-index: 9999;
 }

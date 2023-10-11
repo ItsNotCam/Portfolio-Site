@@ -1,11 +1,9 @@
 export interface IProject {
-  location?: string,
-  affiliated_company?: string,
   name: string,
   month: string,
   year: string,
   description: string,
-  company_link?: string,
+  company_link?: ILink,
   github_link?: ILink,
   tags: Array<string>
   readme_link?: ILink,
@@ -29,8 +27,6 @@ export const PROJECTS: Array<IProject> = [
     tags: [ "ReactJS", "Typescript", "Vanilla CSS" ],
   },
   {
-    location: "Reston, VA",
-    affiliated_company: "BAE Systems, Inc.",
     name: "PCAP Extractor",
     month: "Dec",
     year: "2019",
@@ -38,7 +34,7 @@ export const PROJECTS: Array<IProject> = [
       Full stack web application developed for BAE Systems, Inc. It extracts information from packet capture files 
       and stores them in a NoSQL database. Exposes an API for integration into other internal tools.
     `,
-    company_link: "https://www.baesystems.com/en/home",
+    company_link: {name: "BAE Systems, Inc.", link: "https://www.baesystems.com/en/home"},
     tags: [ "Python", "Javascript", "Flask", "ReactJS", "Docker" ]
   },
   {
@@ -91,7 +87,7 @@ export const PROJECTS: Array<IProject> = [
     name: "HeaterPi",
     month: "September",
     year: "2023",
-    description: `Full stack web application that controls the temperature in a room using a Raspberry Pi. Uses websockets for 
+    description: `Full stack web application that controls the temperature in a room using a Raspberry Pi and a standard space heater. Uses websockets for 
     real-time communication between the client and the device.`,
     tags: [ "Python", "Typescript", "ReactJS" ],
     readme_link: { name: "Readme", link: "https://raw.githubusercontent.com/ItsNotCam/HeaterPi-Client/master/README.md" },

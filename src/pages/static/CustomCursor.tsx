@@ -7,15 +7,29 @@ interface IMousePos {
 
 export default function CustomCursor(): JSX.Element {
 	const [mousePos, setMousePos] = useState<IMousePos>({ left: 0, top: 0 })
+	const [isHoveringOverClickable, setIsHoveringOverClickable] = useState<boolean>(false)
 
 	document.addEventListener('mousemove', (e: MouseEvent) => {
 		setMousePos({ left: e.pageX, top: e.pageY});
 	})
 
+	document.onmouseover = function(e) {
+		let target: any = e.target;
+		let tagName: string = target.tagName;
+		let classList: any = target.classList;
 
-	return (
-		<S.div_CustomCursor id="circle-follow" style={mousePos} />
-	)
+		let clickable: boolean = classList.contains("clickable") 
+			|| tagName === "A" || tagName === "BUTTON";
+
+		setIsHoveringOverClickable(clickable);
+	}
+
+	return <S.div_CustomCursor id="circle-follow" style={mousePos} />;
+	// if(isHoveringOverClickable) {
+	// 	return <S.div_CustomCursorHover id="circle-follow" style={mousePos}/>;
+	// } else {
+	// 	return <S.div_CustomCursor id="circle-follow" style={mousePos} />;
+	// }
 }
 
 const S = {
@@ -31,12 +45,16 @@ const S = {
 		overflow: hidden !important;
 	`,
 
-	div_CustomCursorTwo: styled.div`
-		width: 100%;
-		height: 100%;
+	div_CustomCursorHover: styled.div`
+		position: absolute;
+		transform: translate(-50%, -50%);
+		height: 3em;
+		width: 3em;
 		z-index: 9999;
-		background: radial-gradient(400px, rgba(134, 134, 134, 0.068), transparent 80%);
+		background-color: rgba(12,12,12,0.4);
+		border: 2px solid #dddd;
+		border-radius: 50%;
 		pointer-events: none;
 		overflow: hidden !important;
-	`
+	`,
 }

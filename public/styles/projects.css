@@ -146,6 +146,10 @@
   /* animation-fill-mode: forwards; */
 }
 
+.markdown * {
+  letter-spacing: 0.025rem;
+}
+
 .slide-out {
   animation: slide-out 0.5s normal ease;
 }
@@ -176,6 +180,7 @@
 }
 
 .markdown h2 {
+  font-size: 1.65rem;
   margin-top: 2rem;
   margin-bottom: 0.5rem;
   color: #E3B252;
@@ -184,13 +189,13 @@
 }
 
 .markdown strong {
-  font-weight: 800;
-  font-size: 1.1rem;
+  font-weight: 500;
+  font-size: 1.25rem;
   opacity: 1 !important;
-  color: #e1e1e1;
+  color: #f8f8f8;
 }
 
-.markdown ul {
+.markdown ul, ol {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -225,7 +230,21 @@
 }
 
 .markdown p {
-  color:rgb(195, 195, 195);
+  color:rgb(181, 181, 181);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 100;
+  font-size: 1.2rem;
+}
+
+.markdown li {
+  color:rgb(181, 181, 181);
+  font-size: 1.2rem;
+  font-weight: 100;
+}
+
+.markdown a {
+  color:#E3B252;
 }
 
 .readme-loading {

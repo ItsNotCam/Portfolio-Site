@@ -33,7 +33,7 @@ export default function ProjectCard(props: IProjectCardProps): JSX.Element {
       
       fetch(readme_link)
         .then(res => res.text())
-        .then(text => UpdateReadme(text))
+        .then(text => UpdateReadme(text.replaceAll(":)", "😃")))
         .catch(() => {
           const failedText: string = `# Failed to retrieve README file from GitHub. 
           Please exit and visit the GitHub link to read more about this project.`;
@@ -54,7 +54,7 @@ export default function ProjectCard(props: IProjectCardProps): JSX.Element {
   return (
     <>
       <div className="project-card-header" id={PROJECT.name.replaceAll(" ", "_")}>
-        <CodeOutlined className="color-light" style={styles.folderStyle}/>
+        <CodeOutlined className="color-light" style={styles.folderStyle} />
         {hasLinks ? (
           <div className="project-card-links">
             {
@@ -66,7 +66,7 @@ export default function ProjectCard(props: IProjectCardProps): JSX.Element {
             }
             {
               PROJECT.readme_link ? (
-                <InfoOutlined className="color-light color-alt-hover" style={styles.githubStyle} onClick={OpenReadme} titleAccess="Show Info"/>
+                <InfoOutlined className="color-light color-alt-hover" style={styles.githubStyle} onClick={OpenReadme} titleAccess="Show Info" />
               ) : null
             }
             {
