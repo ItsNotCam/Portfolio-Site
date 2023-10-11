@@ -6,55 +6,61 @@ import { IProject } from "./ProjectList";
 import { uuidv4 } from '../../utilities';
 
 export interface IProjectCardProps {
-  project: IProject,
-  shown: boolean,
+  project: IProject;
+  shown: boolean;
   setReadmeContent: (content: string) => void;
   setShowReadmeContent: (show: boolean) => void;
 }
 
 export default function ProjectCard(props: IProjectCardProps): JSX.Element {
-  const [readme, setReadme] = useState<string | null>(null);
+  const [readmeContent, setReadmeContent] = useState<string | null>(null);
   const [isGettingReadme, setIsGettingReadme] = useState<boolean>(false);
   const hasLinks: boolean = props.project.github_link !== null || props.project.readme_link !== null || props.project.demo_link !== null;  
 
   const UpdateReadme = (text: string): void => {   
-    setReadme(text);
+    setReadmeContent(text);
     props.setReadmeContent(text); 
     props.setShowReadmeContent(true);
   }
   
+  // add any custom styling based on keywords
+  const FormatText = (text: string): string => {
+    return text.replaceAll(":)", "😃");
+  }
+
   const OpenReadme = () => {
-    console.log(readme);
-    if(readme) {
-      props.setReadmeContent(readme);
+    console.log(readmeContent);
+    if(readmeContent) {
+      UpdateReadme(readmeContent);
     } else {
       let readme_link: string = PROJECT.readme_link?.link ?? "";
       setIsGettingReadme(true);
       
       fetch(readme_link)
         .then(res => res.text())
-        .then(text => UpdateReadme(text.replaceAll(":)", "😃")))
+        .then(text => {
+          const formattedText: string = FormatText(text);
+          UpdateReadme(formattedText);
+        })
         .catch(() => {
           const failedText: string = `# Failed to retrieve README file from GitHub. 
           Please exit and visit the GitHub link to read more about this project.`;
           UpdateReadme(failedText);
-          setReadme(null);
+          setReadmeContent(null);
         })
         .finally(() => setIsGettingReadme(false));
     }
   }
 
   const OpenDemo = () => {
-    if(PROJECT.demo_link) {
-      window.open(PROJECT.demo_link.link, "_blank") 
-    }
+    window.open(PROJECT.demo_link?.link, "_blank") 
   }
   
   const { project: PROJECT } = props;
   return (
     <>
       <div className="project-card-header" id={PROJECT.name.replaceAll(" ", "_")}>
-        <CodeOutlined className="color-light" style={styles.folderStyle} />
+        <CodeOutlined className="color-light" style={styles.iconStyle} />
         {hasLinks ? (
           <div className="project-card-links">
             {
@@ -71,7 +77,7 @@ export default function ProjectCard(props: IProjectCardProps): JSX.Element {
             }
             {
               PROJECT.demo_link ? (
-                <LaunchOutlined className="color-light color-alt-hover" style={styles.githubStyle} onClick={OpenDemo}  titleAccess="Open Demo"/>
+                <LaunchOutlined className="color-light color-alt-hover" style={styles.githubStyle} onClick={OpenDemo} titleAccess="Open Demo"/>
               ) : null
             }
           </div>
@@ -102,8 +108,8 @@ export default function ProjectCard(props: IProjectCardProps): JSX.Element {
   )
 }
 
-const styles: {folderStyle: React.CSSProperties, githubStyle: React.CSSProperties} = {
-  folderStyle: {
+const styles: {iconStyle: React.CSSProperties, githubStyle: React.CSSProperties} = {
+  iconStyle: {
     transition: "transform 0.25s",
     fontSize: "3rem",
   },
