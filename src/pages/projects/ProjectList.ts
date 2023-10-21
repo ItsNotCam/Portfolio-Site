@@ -90,7 +90,7 @@ export const PROJECTS: Array<IProject> = [
     description: `Full stack web application that controls the temperature in a room using a Raspberry Pi and a standard space heater. Uses websockets for 
     real-time communication between the client and the device.`,
     tags: [ "Python", "Typescript", "ReactJS" ],
-    readme_link: { name: "Readme", link: "https://raw.githubusercontent.com/ItsNotCam/HeaterPi-Client/master/README.md" },
-    github_link:  { name: "Repo", link: "https://github.com/ItsNotCam/HeaterPi-Client" },
+    readme_link: { name: "Readme", link: "https://raw.githubusercontent.com/ItsNotCam/HeaterPi-Server/master/README.md" },
+    github_link:  { name: "Repo", link: "https://github.com/ItsNotCam/HeaterPi-Server" },
   }
 ]
