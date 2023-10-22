@@ -17,7 +17,7 @@ export default function Footer(): JSX.Element {
       <a href="mailto:cyoung35@gmu.edu" target="_blank">
         <Email htmlColor='white' className="color-alt-hover social-icon" style={iconStyle} titleAccess="Email Me"/>
       </a>
-      <a href="mailto:cyoung35@gmu.edu" target="_blank">
+      <a href="Resume.pdf" target="_blank">
         <StickyNote2Outlined htmlColor='white' className="color-alt-hover social-icon" style={iconStyle} titleAccess="View Resume"/>
       </a>
     </div>

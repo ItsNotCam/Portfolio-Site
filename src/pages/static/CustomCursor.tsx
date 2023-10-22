@@ -13,16 +13,16 @@ export default function CustomCursor(): JSX.Element {
 		setMousePos({ left: e.pageX, top: e.pageY});
 	})
 
-	document.onmouseover = function(e) {
-		let target: any = e.target;
-		let tagName: string = target.tagName;
-		let classList: any = target.classList;
+	// document.onmouseover = function(e) {
+	// 	let target: any = e.target;
+	// 	let tagName: string = target.tagName;
+	// 	let classList: any = target.classList;
 
-		let clickable: boolean = classList.contains("clickable") 
-			|| tagName === "A" || tagName === "BUTTON";
+	// 	let clickable: boolean = classList.contains("clickable") 
+	// 		|| tagName === "A" || tagName === "BUTTON";
 
-		setIsHoveringOverClickable(clickable);
-	}
+	// 	setIsHoveringOverClickable(clickable);
+	// }
 
 	return <S.div_CustomCursor id="circle-follow" style={mousePos} />;
 	// if(isHoveringOverClickable) {

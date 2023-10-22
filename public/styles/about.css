@@ -1,12 +1,16 @@
 .about {
     padding-top: 5vh;
     padding-inline: 8vw;
-    padding-bottom: 3vh;
     display: flex;
     flex-direction: column;
     gap: 2.5vh;
     background-color: #121212;
-    overflow: hidden !important;
+    /* overflow: hidden !important; */
+    /* max-width: 1100px; */
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
 }
 
 
@@ -32,6 +36,8 @@
     width: 100%;
     background-color: rgb(25, 25, 25);
     padding: 2rem;
+    border-radius: 10px;
+    max-width: 1100px;
 }
 
 .about-text {
@@ -71,14 +77,14 @@
 }
 
 .about-profile-pic img {
-    height: min(25vw, 300px);
-    width: min(25vw, 300px);
+    height: min(25vw, 350px);
+    width: min(25vw, 350px);
     border-radius: 50%;
     /* border: 0.5rem solid slateblue; */
     filter: drop-shadow(0 0px 5px #e1e1e1);
 }
 
-@media (max-width: 50rem) {
+@media (max-width: 60rem) {
     .about-profile-pic {
         display: none;
     }
