@@ -7,7 +7,7 @@ interface IMousePos {
 
 export default function CustomCursor(): JSX.Element {
 	const [mousePos, setMousePos] = useState<IMousePos>({ left: 0, top: 0 })
-	const [isHoveringOverClickable, setIsHoveringOverClickable] = useState<boolean>(false)
+	// const [isHoveringOverClickable, setIsHoveringOverClickable] = useState<boolean>(false)
 
 	document.addEventListener('mousemove', (e: MouseEvent) => {
 		setMousePos({ left: e.pageX, top: e.pageY});

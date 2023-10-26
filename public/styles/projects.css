@@ -22,7 +22,7 @@
 
 .project-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-columns: repeat(3, 1fr); */
   padding: 0;
   gap: 15px;
   grid-auto-flow: row;
@@ -106,7 +106,7 @@
   margin-top: 2px;
   margin-bottom: 2px;
 }
-
+/* 
 @media (max-width: 70rem) {
   .project-cards {
     grid-template-columns: repeat(2, 1fr);
@@ -125,7 +125,7 @@
   .project-card {
     padding: 5%;
   }
-}
+} */
 
 /* Markdown Preview Styles */
 
@@ -287,4 +287,21 @@
   to {
     background-color: rgba(12,12,12,0.8);
   }
+}
+
+
+
+@media (min-width: 667px) {
+  .project-cards {
+    grid-template-columns: repeat(2, 1fr);
+    /* text-size-adjust: none; */
+  }
+
+  /* .project-card-body h3 {
+    font-size: 1.5rem;
+  }
+
+  .project-card-body p {
+    font-size: 1.25rem;
+  } */
 }

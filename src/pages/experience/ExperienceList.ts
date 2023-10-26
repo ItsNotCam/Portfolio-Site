@@ -22,7 +22,7 @@ export const EXPERIENCE: Array<IExperience> = [
   {
     company: "BAE Systems, Inc.",
     location: "Reston, VA",
-    title: "Software Engineering Intern",
+    title: "DevOps Software Engineering Intern",
     start_month: "Dec",
     start_year: "2019",
     end_month: "March",
@@ -63,7 +63,7 @@ export const EXPERIENCE: Array<IExperience> = [
   {
     company: "Parsons Corporation",
     location: "Centreville, VA",
-    title: "Junior Software Engineering Intern",
+    title: "DevOps Junior Software Engineering Intern",
     start_month: "June",
     start_year: "2018",
     end_month: "August",

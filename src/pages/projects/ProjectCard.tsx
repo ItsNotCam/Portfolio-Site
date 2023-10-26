@@ -115,7 +115,7 @@ const styles: {iconStyle: React.CSSProperties, githubStyle: React.CSSProperties}
   },
   githubStyle: {
     transition: "transform 0.25s",
-    fontSize: "2rem",
+    fontSize: "2.5rem",
     cursor: "pointer"
   }
 }

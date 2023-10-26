@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { uuidv4 } from "../../utilities"
+import { BrowserView } from "react-device-detect";
 
 interface INavItemProps {
 	page: string;
@@ -42,13 +43,15 @@ export default function Navbar(): JSX.Element {
 	
 	return (
 		<header>
-			<div className={navIsSticky ? "nav-sticky" : "nav-static"}>
-				<nav className="navbar" id="navbar">
-					<ul className="navbar-list">
-						{pages.map((p, i) => <NavItem page={p} index={i} sticky={navIsSticky} key={uuidv4()}/>)}
-					</ul>
-				</nav>
-			</div>
+			<BrowserView>
+				<div className={navIsSticky ? "nav-sticky" : "nav-static"}>
+					<nav className="navbar" id="navbar">
+						<ul className="navbar-list">
+							{pages.map((p, i) => <NavItem page={p} index={i} sticky={navIsSticky} key={uuidv4()}/>)}
+						</ul>
+					</nav>
+				</div>
+			</BrowserView>
 		</header>
 	)
 }
