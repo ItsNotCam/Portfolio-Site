@@ -33,8 +33,9 @@ export default function Nav(): JSX.Element {
 	}
 
   var classNames: string = "nav-container";
-  if(navIsSticky)
-    classNames = classNames.concat(" nav-container-sticky");
+  if(navIsSticky) {
+    classNames = classNames.concat(" nav-sticky");
+  }
 
   return (
     <nav className={classNames}>

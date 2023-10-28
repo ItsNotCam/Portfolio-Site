@@ -1,18 +1,3 @@
-#about {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  /* Temp */
-  padding-bottom: 500px;
-}
-
-/* #about h1 {
-  font-size: 3rem;
-  margin-block: 5rem;
-} */
-
 .about-container {
   display: flex;
   flex-direction: row;

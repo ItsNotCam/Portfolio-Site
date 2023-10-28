@@ -8,7 +8,7 @@
   padding-block: 2.5rem;
 }
 
-.nav-container-sticky {
+.nav-sticky {
   position: fixed;
   padding-block: 1rem;
   background-color: rgba(20, 20, 20, 0.7);

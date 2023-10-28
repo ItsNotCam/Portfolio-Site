@@ -4,6 +4,7 @@ import CustomCursor from './pages/static/CustomCursor';
 import Home from './pages/home/Home';
 import Nav from './pages/static/Nav';
 import About from './pages/about/About';
+import Projects from './pages/projects/Projects';
 
 export default function App(): JSX.Element {
   return (
@@ -11,6 +12,7 @@ export default function App(): JSX.Element {
       <Nav />
       <Home />
       <About />
+      <Projects />
       <BrowserView>
         <CustomCursor />
       </BrowserView>
