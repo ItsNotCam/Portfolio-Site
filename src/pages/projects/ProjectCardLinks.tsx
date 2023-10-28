@@ -1,7 +1,7 @@
 import { GitHub, InfoOutlined, LaunchOutlined } from "@mui/icons-material";
-import { styles } from "./Projects";
 import { ILink } from "./ProjectList";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { styles } from './ProjectCard';
 
 export interface IProjectCardLinkProps {
   demoLink?: ILink;
@@ -32,32 +32,35 @@ export const ProjectCardLinks = (props: IProjectCardLinkProps): JSX.Element => {
   }
 
   return (
-    <div className="project-card-links">
+    <div className="project-card-links color-alt-hover">
       {gitLink ? (
-        <a href={gitLink?.link} target="_blank">
-          <GitHub 
-            className="color-light color-alt-hover" 
-            style={styles.githubStyle} 
-            titleAccess="Open GitHub Repository" 
-          />
-        </a>
+        <div className="project-card-link color-alt-hover">
+          <a href={gitLink?.link} target="_blank">
+            <GitHub 
+              style={styles.githubStyle} 
+              titleAccess="Open GitHub Repository" 
+            />
+          </a>
+        </div>
       ) : null}
       {readmeLink ? (
-        <InfoOutlined 
-          className="color-light color-alt-hover" 
-          style={styles.githubStyle} 
-          onClick={showReadme} 
-          titleAccess="Show Info" 
-        />
+        <div className="project-card-link color-alt-hover">
+          <InfoOutlined 
+            style={styles.githubStyle} 
+            onClick={showReadme} 
+            titleAccess="Show Info" 
+          />
+        </div>
       ) : null}
       {demoLink ? (
-        <a href={demoLink?.link} target="_blank">
-          <LaunchOutlined 
-            className="color-light color-alt-hover" 
-            style={styles.githubStyle} 
-            titleAccess="Open Demo" 
-          />
-        </a>
+        <div className="project-card-link color-alt-hover">
+          <a href={demoLink?.link} target="_blank">
+            <LaunchOutlined 
+              style={styles.githubStyle} 
+              titleAccess="Open Demo" 
+            />
+          </a>
+        </div>
       ) : null}
     </div>
   );

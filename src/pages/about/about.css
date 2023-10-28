@@ -45,6 +45,15 @@
   gap: 1rem;
 }
 
+.about-connect a {
+  transition: transform 0.2s;
+}
+
+.about-connect a:hover {
+  transform: scale(1.15);
+  color: var(--color-alt);
+}
+
 @media (max-width: 1000px) {
   .about-container img {
     display: none;

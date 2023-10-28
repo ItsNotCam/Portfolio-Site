@@ -34,15 +34,3 @@ export default function Projects(): JSX.Element {
     </section>
   )
 }
-
-export const styles = {
-  iconStyle: {
-    transition: "transform 0.25s",
-    fontSize: "3rem",
-  },
-  githubStyle: {
-    transition: "transform 0.25s",
-    fontSize: "2.5rem",
-    cursor: "pointer"
-  }
-}

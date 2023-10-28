@@ -1,14 +1,27 @@
 import { useEffect, useState } from "react";
 import { CodeOutlined } from "@mui/icons-material";
-import { styles } from "./Projects";
 import { ProjectCardLinks } from "./ProjectCardLinks";
 import { IProject } from "./ProjectList";
 import { uuidv4 } from "../../utilities";
+
+import Icon from '@mui/material/Icon';
 
 export interface IProjectCardProps {
   PROJECT: IProject;
   setReadmeContent: (content: string) => void;
   setShowReadmeContent: (show: boolean) => void;
+}
+
+export const styles = {
+  iconStyle: {
+    fontSize: "3rem",
+    color: "inherit"
+  },
+  githubStyle: {
+    fontSize: "2.5rem",
+    cursor: "pointer",
+    color: "inherit"
+  }
 }
 
 
@@ -24,7 +37,7 @@ export const ProjectCard = (props: IProjectCardProps): JSX.Element => {
   return (
     <div className="project-card" {...mouseEvents}>
       <div className="project-card-header">
-        <CodeOutlined className="color-light" style={styles.iconStyle} />
+        <CodeOutlined className="color-light color-alt-hover" style={styles.iconStyle} />
         <ProjectCardLinks 
           demoLink={PROJECT.demo_link} 
           readmeLink={PROJECT.readme_link} 
