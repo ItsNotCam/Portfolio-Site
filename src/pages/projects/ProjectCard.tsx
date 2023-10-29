@@ -41,7 +41,7 @@ export const ProjectCard = (props: IProjectCardProps): JSX.Element => {
     onMouseLeave: () => setHighlighted(false)
   };
 
-  const card_large: JSX.Element = (<>
+  const CARD_LARGE = (): JSX.Element => (<>
     <div className="project-card-header">
       <CodeOutlined className="color-light color-alt-hover" style={styles.iconStyle} />
       <ProjectCardLinks 
@@ -67,7 +67,7 @@ export const ProjectCard = (props: IProjectCardProps): JSX.Element => {
     )}
   </>)
 
-  const card_small: JSX.Element = (<>
+  const CARD_SMALL = (): JSX.Element => (<>
     <div className="project-card-sm-info">
       <h1 className="color-light">{PROJECT.name}</h1>
       <ul className="project-tags-sm">
@@ -100,31 +100,18 @@ export const ProjectCard = (props: IProjectCardProps): JSX.Element => {
     <div className="project-card-sm-dropdown">
       <IconButton onClick={() => setDroppedDown(!droppedDown)}>
         {droppedDown
-          ? (
-            <ArrowDropDownOutlinedIcon  
-              className="project-icon-button"
-              style={{
-                fontSize: "2rem"
-              }}
-            />
-          ) : (
-            <ArrowLeftOutlinedIcon
-              className="project-icon-button"
-              style={{
-                fontSize: "2rem"
-              }}
-            />
-          )}
+          ? <ArrowDropDownOutlinedIcon className="project-icon-button" style={{fontSize: "2rem"}} />
+          : <ArrowLeftOutlinedIcon className="project-icon-button" style={{fontSize: "2rem"}}/>}
       </IconButton>
     </div>
   </>)
 
   return (<>
     <div className="project-card-lg" {...mouseEvents}>
-      {card_large}
+      <CARD_LARGE />
     </div>
-    <div className="project-card-sm" {...mouseEvents} onClick={() => setDroppedDown(!droppedDown)}>
-      {card_small}
+    <div className="project-card-sm" {...mouseEvents}> {/*onClick={() => setDroppedDown(!droppedDown)}>*/}
+      <CARD_SMALL />
     </div>
   </>);
 };

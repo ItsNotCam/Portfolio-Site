@@ -1,8 +1,9 @@
 .project-list {
   display: grid;
-  grid-template-columns: repeat(2, 2fr);
+  grid-template-columns: 2fr 2fr;
   gap: 1.25rem;
   max-width: 1100px;
+  /* padding-inline: 5rem; */
   padding-inline: 5rem;
 }
 

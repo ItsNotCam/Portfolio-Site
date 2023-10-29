@@ -11,8 +11,9 @@
   --color-alt: #E3B252;
   --color-dark: #949494;
   --color-bg-mid: #1C1C1C;
-  --color-darker: #b1b1b1;
+  --color-darker: #a4a4a4;
   --color-bg-dark: #121212;
+  --color-darker: #adadad;
 }
 
 section {
@@ -31,6 +32,10 @@ body {
 
 .color-dark {
   color: var(--color-dark);
+}
+
+.color-darker {
+  color: var(--color-darker);
 }
 
 .color-light,
