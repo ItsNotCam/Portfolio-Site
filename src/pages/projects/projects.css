@@ -1,31 +1,71 @@
 .project-list {
   display: grid;
-  grid-template-columns: 2fr 2fr;
-  gap: 1rem;
+  grid-template-columns: repeat(2, 2fr);
+  gap: 1.25rem;
   max-width: 1100px;
   padding-inline: 5rem;
 }
 
-.project-card {
+/* Large */
+.project-card-lg {
   background-color: var(--color-bg-mid);
   padding: 2rem;
   border-radius: 5px;
   transition: transform 0.15s;
 }
 
-.project-card p {
+.project-card-lg p {
   font-size: 1.05rem;
+  padding-block: 0.25rem;
 }
 
-.project-card:hover {
+.project-card-lg:hover {
   transform: translateY(-5px);
 }
 
-.project-card h1,
-.project-card p,
-.project-card ul {
+.project-card-lg h1,
+.project-card-lg p,
+.project-card-lg ul {
   pointer-events: none;
 }
+
+/* Small */
+.project-card-sm {
+  display: none;
+
+  grid-template: repeat(2, 2fr);
+  background-color: var(--color-bg-mid);
+  padding: 1rem;
+  border-radius: 5px;
+  transition: transform 0.15s;
+
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.project-card-sm p {
+  margin-block: 0.5rem;
+}
+
+.project-card-sm h2 {
+  margin-top: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.project-icon-button {
+  background-color: rgb(52, 52, 52);
+  border-radius: 50%;
+  font-size: 2rem;
+}
+
+.project-icon-button:hover {
+  color: var(--color-alt);
+}
+
+.project-card-sm-desc {
+  padding-top: 1rem;
+}
+
 
 .project-card-header {
   display: flex;
@@ -50,7 +90,7 @@
   transform: scale(1.15);
 }
 
-.project-tags {
+.project-tags-lg {
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -58,9 +98,17 @@
   padding-block: 1rem;
 }
 
+.project-tags-sm {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 0.8rem;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
 .project-tag {
-  /* background-color: rgba(248, 176, 68, 0.65);
-  color: rgb(255,235,81); */
   background-color: rgba(57, 57, 57, 0.65);
   color: rgb(182, 182, 182);
   padding-block: 0.3rem;
@@ -69,16 +117,25 @@
 }
 
 @media (max-width: 1000px) {
+  .project-card-header-lg {
+    display: none;
+  }
+
+  .project-card-lg {
+    display: none;
+  }
+
+  .project-card-sm {
+    display: flex;
+  }
+
+  .project-card-sm p {
+    font-size: 1.25rem;
+  }
+
   .project-list {
     grid-template-columns: 1fr;
-  }
-
-  .project-list h1 {
-    font-size: 1.7rem;
-  }
-
-  .project-list p {
-    font-size: 1.2rem;
+    width: 80%;
   }
 }
 
