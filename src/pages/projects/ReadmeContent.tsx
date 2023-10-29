@@ -1,12 +1,12 @@
+import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
+import { useState } from "react";
+
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
 import './projects.css';
 import './markdown.css';
-import { useState } from "react";
 
-
-import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
 
 interface IReadmeContentProps {
   content: string; 

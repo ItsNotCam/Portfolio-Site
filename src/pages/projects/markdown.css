@@ -75,7 +75,7 @@
 }
 
 .markdown a {
-  color:#E3B252;
+  color: var(--color-alt);
 }
 
 
@@ -92,4 +92,8 @@
   padding: 0.5rem;
 
   cursor: pointer;
+}
+
+.mid-icon-button:hover {
+  color: var(--color-alt);
 }

@@ -1,10 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { CodeOutlined } from "@mui/icons-material";
 import { ProjectCardLinks } from "./ProjectCardLinks";
 import { IProject } from "./ProjectList";
 import { uuidv4 } from "../../utilities";
-
-import Icon from '@mui/material/Icon';
 
 export interface IProjectCardProps {
   PROJECT: IProject;
@@ -24,6 +22,11 @@ export const styles = {
   }
 }
 
+const ProjectTag = (props: { tag: string }): JSX.Element => {
+  return (
+    <span className="project-tag">{props.tag}</span>
+  );
+}
 
 export const ProjectCard = (props: IProjectCardProps): JSX.Element => {
   const [highlighted, setHighlighted] = useState<boolean>(false);
@@ -49,8 +52,12 @@ export const ProjectCard = (props: IProjectCardProps): JSX.Element => {
       {highlighted
         ? <h1 className="color-alt">{PROJECT.name}</h1>
         : <h1 className="color-light">{PROJECT.name}</h1>}
-      <ul>
-        {PROJECT.tags.map(tag => <li key={uuidv4()}><i className="color-dark">{tag}</i></li>)}
+      <ul className="project-tags">
+        {PROJECT.tags.map(tag => 
+          <li key={uuidv4()}>
+            <ProjectTag tag={tag}/>
+          </li>
+        )}
       </ul>
       <p>{PROJECT.description}</p>
     </div>
