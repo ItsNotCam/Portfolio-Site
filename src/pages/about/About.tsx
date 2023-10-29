@@ -1,5 +1,5 @@
 import { Email, GitHub, LinkedIn, StickyNote2Outlined } from '@mui/icons-material'
-import './about.css'
+import './_About.css'
 
 const iconStyle: React.CSSProperties = {
   transition: "transform 0.25s",

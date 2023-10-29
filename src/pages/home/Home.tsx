@@ -1,5 +1,5 @@
 import ScrollIcon from "./ScrollIcon";
-import './home.css'
+import './_Home.css'
 
 export default function Home(): JSX.Element {
   return (

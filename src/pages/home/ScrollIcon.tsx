@@ -1,4 +1,4 @@
-import './scroll.css'
+import './_Scroll.css'
 
 export default function ScrollIcon(): JSX.Element {
   return (

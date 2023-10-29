@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { uuidv4 } from "../../utilities"
-import './nav.css'
+import './_Nav.css'
 
 const NavItem = (props: {name: string, index: number, sticky: boolean}): JSX.Element => {
   const {name: NAME, index: INDEX, sticky: STICKY} = props;

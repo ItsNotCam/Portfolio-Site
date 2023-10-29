@@ -29,6 +29,15 @@
   pointer-events: none;
 }
 
+.project-tags-lg {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 0.8rem;
+  padding-block: 1rem;
+}
+
+
 /* Small */
 .project-card-sm {
   display: none;
@@ -43,6 +52,10 @@
   justify-content: space-between;
 }
 
+.project-card-sm h1 {
+  width: 100%;
+}
+
 .project-card-sm p {
   margin-block: 0.5rem;
 }
@@ -52,20 +65,29 @@
   margin-bottom: 1rem;
 }
 
+.project-card-sm-desc {
+  padding-top: 1rem;
+}
+
 .project-icon-button {
   background-color: rgb(52, 52, 52);
   border-radius: 50%;
   font-size: 2rem;
 }
 
+.project-tags-sm {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 0.8rem;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
 .project-icon-button:hover {
   color: var(--color-alt);
 }
-
-.project-card-sm-desc {
-  padding-top: 1rem;
-}
-
 
 .project-card-header {
   display: flex;
@@ -88,24 +110,6 @@
 
 .project-card-link:hover {
   transform: scale(1.15);
-}
-
-.project-tags-lg {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  gap: 0.8rem;
-  padding-block: 1rem;
-}
-
-.project-tags-sm {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  gap: 0.8rem;
-  padding-top: 1rem;
-  padding-bottom: 0.5rem;
-  font-size: 1.1rem;
 }
 
 .project-tag {
@@ -190,4 +194,17 @@
 @keyframes slide-out {
   from {transform: translateX(0vh)}
   to {transform: translateX(100vh)}
+}
+
+.shown {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.project-dropdown-sm {
+  transition: all 0.5s;
+  overflow-y: hidden;
 }
