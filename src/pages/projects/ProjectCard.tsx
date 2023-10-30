@@ -1,12 +1,11 @@
 import { useState } from "react";
-import { CodeOutlined } from "@mui/icons-material";
+import { CodeOutlined, ArrowLeftOutlined, ArrowDropDownOutlined } from "@mui/icons-material";
+import { IconButton } from '@mui/material';
+
 import { ProjectCardLinks } from "./ProjectCardLinks";
 import { IProject } from "./ProjectList";
 import { uuidv4 } from "../../utilities";
 
-import ArrowLeftOutlinedIcon from '@mui/icons-material/ArrowLeftOutlined';
-import ArrowDropDownOutlinedIcon from '@mui/icons-material/ArrowDropDownOutlined';
-import { IconButton } from '@mui/material';
 
 export interface IProjectCardProps {
   PROJECT: IProject;
@@ -84,24 +83,24 @@ export const ProjectCard = (props: IProjectCardProps): JSX.Element => {
           )}
         </div>
 
-        {hasLinks(PROJECT)
-          ? <h2 className="color-alt">Links</h2>
-          : null}
+        {hasLinks(PROJECT) ? (<>
+          <h2 className="color-alt">Links</h2>
+          <ProjectCardLinks 
+            demoLink={PROJECT.demo_link} 
+            readmeLink={PROJECT.readme_link} 
+            gitLink={PROJECT.github_link} 
+            setShowReadmeContent={props.setShowReadmeContent}
+            setReadmeContent={props.setReadmeContent}
+          />
+        </>) : null}
 
-        <ProjectCardLinks 
-          demoLink={PROJECT.demo_link} 
-          readmeLink={PROJECT.readme_link} 
-          gitLink={PROJECT.github_link} 
-          setShowReadmeContent={props.setShowReadmeContent}
-          setReadmeContent={props.setReadmeContent}
-        />
       </div>
     </div>
     <div className="project-card-sm-dropdown">
       <IconButton onClick={() => setDroppedDown(!droppedDown)}>
         {droppedDown
-          ? <ArrowDropDownOutlinedIcon className="project-icon-button" style={{fontSize: "2rem"}} />
-          : <ArrowLeftOutlinedIcon className="project-icon-button" style={{fontSize: "2rem"}}/>}
+          ? <ArrowDropDownOutlined className="project-icon-button" style={{fontSize: "2rem"}} />
+          : <ArrowLeftOutlined className="project-icon-button" style={{fontSize: "2rem"}}/>}
       </IconButton>
     </div>
   </>)

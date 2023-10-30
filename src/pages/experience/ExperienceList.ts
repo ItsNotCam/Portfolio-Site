@@ -50,9 +50,10 @@ export const EXPERIENCE: Array<IExperience> = [
     end_year: "2019",
     logo_path: "BAE.png",
     job_description: [`
-      Lead the design and development of a Windows sytem performance testing tool that
-      accurately quantified the performance impacts of various software components on 
-      BAE's standard system image.`,`System Administrators who recorded performance
+      My work on this project was acknowledged by the VP of IT at BAE Systems who offered me a full 
+      time position and a full ride to my university.`,` I lead the design and development of a Windows 
+      sytem performance testing tool that accurately quantified the performance impacts of various 
+      software components on BAE's standard system image.`,`System Administrators who recorded performance
       data using this tool reported time savings in excess of 75% over their previous 
       methods.`,`The resulting data was used to influence future hardware and software requisition.
     `],

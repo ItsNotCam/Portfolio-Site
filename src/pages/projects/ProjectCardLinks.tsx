@@ -1,6 +1,7 @@
-import { GitHub, InfoOutlined, LaunchOutlined } from "@mui/icons-material";
-import { ILink } from "./ProjectList";
 import { useState } from "react";
+import { GitHub, LaunchOutlined, TextSnippetOutlined } from "@mui/icons-material";
+
+import { ILink } from "./ProjectList";
 import { styles } from './ProjectCard';
 
 export interface IProjectCardLinkProps {
@@ -16,8 +17,8 @@ export const ProjectCardLinks = (props: IProjectCardLinkProps): JSX.Element => {
   const [readmeContent, setReadmeContent] = useState<string>("");
 
   const showReadme = (): void => {
-    if(readmeContent === "") {
-      fetch(readmeLink?.link ?? "")
+    if(readmeContent === "" && readmeLink !== undefined) {
+      fetch(readmeLink.link)
         .then(data => data.text())
         .then(text => {
           setReadmeContent(text);
@@ -45,10 +46,10 @@ export const ProjectCardLinks = (props: IProjectCardLinkProps): JSX.Element => {
       ) : null}
       {readmeLink ? (
         <div className="project-card-link color-alt-hover">
-          <InfoOutlined 
+          <TextSnippetOutlined 
             style={styles.githubStyle} 
             onClick={showReadme} 
-            titleAccess="Show Info" 
+            titleAccess="Documentation" 
           />
         </div>
       ) : null}

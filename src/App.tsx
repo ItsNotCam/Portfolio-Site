@@ -15,6 +15,10 @@ export default function App(): JSX.Element {
       <About />
       <Projects />
       <Experience />
+      <br />
+      <br />
+      <br />
+      <br />
       <BrowserView>
         <CustomCursor />
       </BrowserView>

@@ -1,5 +1,5 @@
-import { GitHub, LinkedIn, Email } from '@mui/icons-material';
 import React from 'react';
+import { GitHub, LinkedIn, Email } from '@mui/icons-material';
 
 export default function Socials() {
   const iconStyle: React.CSSProperties = {

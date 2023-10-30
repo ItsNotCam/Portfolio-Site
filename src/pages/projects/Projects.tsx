@@ -1,11 +1,12 @@
+import './_Projects.css';
+
 import { useState } from "react";
+
 import { uuidv4 } from "../../utilities";
 import { PROJECTS } from "./ProjectList";
-
 import { ProjectCard } from "./ProjectCard";
 import { ReadmeContent } from "./ReadmeContent";
 
-import './_Projects.css';
 
 export default function Projects(): JSX.Element {
   const [readmeContent, setReadmeContent] = useState<string>("");
