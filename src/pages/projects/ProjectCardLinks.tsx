@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { GitHub, LaunchOutlined, TextSnippetOutlined } from "@mui/icons-material";
 
-import { ILink } from "./ProjectList";
+import { ILink } from "./_ProjectList";
 import { styles } from './ProjectCard';
 
 export interface IProjectCardLinkProps {

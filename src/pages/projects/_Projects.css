@@ -159,7 +159,8 @@
   }
 
   .project-card-sm p {
-    font-size: 1.75em;
+    font-size: 1.4em;
+    text-size-adjust: 170%;
   }
 
   .project-list {
@@ -243,4 +244,9 @@
 .project-dropdown-sm {
   transition: all 0.5s;
   overflow-y: hidden;
+}
+
+.project-date {
+  font-size: 1em;
+  font-size-adjust: 100%;
 }

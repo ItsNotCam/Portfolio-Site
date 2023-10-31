@@ -3,7 +3,7 @@ import { CodeOutlined, ArrowLeftOutlined, ArrowDropDownOutlined } from "@mui/ico
 import { IconButton } from '@mui/material';
 
 import { ProjectCardLinks } from "./ProjectCardLinks";
-import { IProject } from "./ProjectList";
+import { IProject } from "./_ProjectList";
 import { uuidv4 } from "../../utilities";
 
 
@@ -51,6 +51,9 @@ export const ProjectCard = (props: IProjectCardProps): JSX.Element => {
         setReadmeContent={props.setReadmeContent}
       />
     </div>
+    <p className="project-date color-darker">
+      {PROJECT.year}
+    </p>
     {highlighted
       ? <h1 className="color-alt">{PROJECT.name}</h1>
       : <h1 className="color-light">{PROJECT.name}</h1>}
@@ -70,6 +73,9 @@ export const ProjectCard = (props: IProjectCardProps): JSX.Element => {
     <div className="project-card-sm-info">
       <div className="project-card-sm-header">
         <div className="project-card-header-l">
+          <span className="project-date color-darker">
+            {PROJECT.year}
+          </span>
           <h1 className="color-light">{PROJECT.name}</h1>
           <ul className="project-tags-sm">
             {PROJECT.tags.map(tag => 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { uuidv4 } from "../../utilities";
-import { IExperience } from "./ExperienceList";
+import { IExperience } from "./_ExperienceList";
 
 import { ArrowLeftOutlined, ArrowDropDownOutlined } from "@mui/icons-material";
 import { IconButton } from '@mui/material';

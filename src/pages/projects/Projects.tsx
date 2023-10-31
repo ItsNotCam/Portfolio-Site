@@ -3,7 +3,7 @@ import './_Projects.css';
 import { useState } from "react";
 
 import { uuidv4 } from "../../utilities";
-import { PROJECTS } from "./ProjectList";
+import { PROJECTS } from "./_ProjectList";
 import { ProjectCard } from "./ProjectCard";
 import { ReadmeContent } from "./ReadmeContent";
 import {disableBodyScroll, enableBodyScroll} from 'body-scroll-lock';

@@ -1,7 +1,7 @@
 import './_Experience.css';
 
 import { uuidv4 } from "../../utilities";
-import { EXPERIENCE } from "./ExperienceList";
+import { EXPERIENCE } from "./_ExperienceList";
 import ExperienceCard from "./ExperienceCard";
 
 export default function Experience(): JSX.Element {
