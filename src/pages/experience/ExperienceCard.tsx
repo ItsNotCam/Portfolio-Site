@@ -8,7 +8,7 @@ import { IconButton } from '@mui/material';
 export default function ExperienceCard(props: IExperience): JSX.Element {
   const [droppedDown, setDroppedDown] = useState<boolean>(false);
 
-  const LARGE = (): JSX.Element => {
+  const LARGE_CARD = (): JSX.Element => {
     return (
       <div className="experience-card-lg">
         <p className="experience-date color-darker">
@@ -35,7 +35,7 @@ export default function ExperienceCard(props: IExperience): JSX.Element {
     )
   }
 
-  const SMALL = (): JSX.Element => {
+  const SMALL_CARD = (): JSX.Element => {
     return (
       <div className="experience-card-sm">
         <div className="experience-card-sm-header">
@@ -77,7 +77,7 @@ export default function ExperienceCard(props: IExperience): JSX.Element {
 
 
   return (<>
-    <LARGE />
-    <SMALL />
+    <LARGE_CARD />
+    <SMALL_CARD />
   </>);
 }
