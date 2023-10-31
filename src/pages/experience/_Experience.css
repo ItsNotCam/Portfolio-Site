@@ -12,13 +12,17 @@
   border-radius: 5px;
 }
 
+.experience-card h1 {
+  font-size: 2em;
+}
+
 /* .experience-card h1 {
   margin-bottom: -10px;
 } */
 
 .experience-description p {
-  padding-top: 0.7rem;
-  font-size: 1.15rem;
+  padding-top: 1em;
+  font-size: 1.15em;
 }
 
 .experience-tags {
@@ -36,5 +40,5 @@
   padding-block: 0.35rem;
   padding-inline: 0.5rem;
   border-radius: 3px;
-  font-size: 1.1rem;
+  font-size: 1.1em;
 }

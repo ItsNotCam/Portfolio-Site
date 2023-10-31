@@ -78,9 +78,9 @@ export const ProjectCard = (props: IProjectCardProps): JSX.Element => {
       </ul>
       <div className={droppedDown ? `project-dropdown-sm shown` : "project-dropdown-sm hidden"}>
         <div className="project-card-sm-desc">
-          {PROJECT.description.map(
-            description => <p key={uuidv4()}>{description}</p>
-          )}
+          {PROJECT.description.map(description => (
+            <p key={uuidv4()} className="color-light" style={{opacity: 0.9}}>{description}</p>
+          ))}
         </div>
 
         {hasLinks(PROJECT) ? (<>

@@ -5,7 +5,7 @@ import { EMAIL, GITHUB, LINKED_IN } from './_LINKS';
 export default function Socials() {
   const iconStyle: React.CSSProperties = {
     transition: "transform 0.25s",
-    fontSize: "1.8rem",
+    fontSize: "1.8em",
   }
 
 

@@ -1,16 +1,20 @@
 import './_Projects.css';
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { uuidv4 } from "../../utilities";
 import { PROJECTS } from "./ProjectList";
 import { ProjectCard } from "./ProjectCard";
 import { ReadmeContent } from "./ReadmeContent";
+import {disableBodyScroll, enableBodyScroll} from 'body-scroll-lock';
 
 
 export default function Projects(): JSX.Element {
   const [readmeContent, setReadmeContent] = useState<string>("");
   const [showReadmeContent, setShowReadmeContent] = useState<boolean>(false);
+
+  // stop body scrolling when readme content is showing
+  showReadmeContent ? disableBodyScroll(document.body) : enableBodyScroll(document.body);
 
   return (
     <section id="projects">

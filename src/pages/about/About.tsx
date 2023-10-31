@@ -3,7 +3,7 @@ import './_About.css'
 
 const iconStyle: React.CSSProperties = {
   transition: "transform 0.25s",
-  fontSize: "2.5rem",
+  fontSize: "2.5em",
 }
 
 export default function About(): JSX.Element {

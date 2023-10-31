@@ -73,17 +73,17 @@
 .project-icon-button {
   background-color: rgb(52, 52, 52);
   border-radius: 50%;
-  font-size: 2rem;
+  font-size: rem;
 }
 
 .project-tags-sm {
   list-style: none;
   display: flex;
   flex-direction: row;
-  gap: 0.8rem;
-  padding-top: 1rem;
-  padding-bottom: 0.5rem;
-  font-size: 1.1rem;
+  gap: 0.8em;
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+  font-size: 1.1em;
 }
 
 .project-icon-button:hover {
@@ -96,6 +96,10 @@
   justify-content: space-between;
   align-items: center;
   padding-bottom: 1rem;
+}
+
+.project-card-sm h1 {
+  font-size: 2em;
 }
 
 .project-card-links {
@@ -135,7 +139,7 @@
   }
 
   .project-card-sm p {
-    font-size: 1.25rem;
+    font-size: 1.75em;
   }
 
   .project-list {

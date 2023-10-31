@@ -21,12 +21,12 @@
 }
 
 .about-description h3 {
-  font-size: 1.65rem;
+  font-size: 1.65em;
   margin-bottom: 1.5rem;
 }
 
 .about-description p {
-  font-size: 1.3rem;
+  font-size: 1.3em;
   color: var(--color-darker);
 }
 

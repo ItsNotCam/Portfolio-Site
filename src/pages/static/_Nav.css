@@ -18,7 +18,7 @@
 }
 
 .nav-container ul {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   list-style: none;
   display: flex;
   gap: 3rem;
@@ -44,6 +44,11 @@
   opacity: 75%;
 }
 
+@media (max-width: 1000px) {
+  .nav-container ul {
+    font-size: 1.8em;
+  }
+}
 @keyframes fall-in {
   from { transform: translateY(-5vh) }
   to { transform: translateY(0) }
