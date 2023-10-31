@@ -36,8 +36,7 @@ export const EXPERIENCE: Array<IExperience> = [
       automation processes.
     `],
     company_link: "https://www.baesystems.com/en/home",
-    tags: [ "Python", "Javascript", "Flask", "ReactJS", "Material UI", "Bootstrap", "Zeek", 
-      "Docker", "Docker Compose", "NoSQL" ],
+    tags: [ "Python", "JavaScript", "Flask", "ReactJS", "Material UI", "Bootstrap", "Docker", "NoSQL" ],
     links: [ ]
   },
   {

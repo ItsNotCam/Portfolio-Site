@@ -96,7 +96,7 @@ export const ProjectCard = (props: IProjectCardProps): JSX.Element => {
         </div>
 
         {hasLinks(PROJECT) ? (<>
-          <h2 className="color-alt p-link">Links</h2>
+          <h2 className="color-alt p-link">More</h2>
           <ProjectCardLinks 
             demoLink={PROJECT.demo_link} 
             readmeLink={PROJECT.readme_link} 
