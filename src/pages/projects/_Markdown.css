@@ -93,6 +93,8 @@
 
   cursor: pointer;
   z-index: 999;
+
+  user-select: none;
 }
 
 .mid-icon-button:hover {

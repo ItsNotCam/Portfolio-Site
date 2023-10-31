@@ -1,6 +1,6 @@
 import './_Projects.css';
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { uuidv4 } from "../../utilities";
 import { PROJECTS } from "./ProjectList";

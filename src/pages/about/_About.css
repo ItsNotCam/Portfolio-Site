@@ -49,6 +49,31 @@
   transition: transform 0.2s;
 }
 
+.resume {
+  display: flex;
+  align-items: center;
+}
+
+.resume-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  padding: 0.5em;
+  font-size: 1.5em;
+  border-radius: 8px;
+
+  background-color: var(--color-bg-dark);
+
+  transition: all 0.3s ease;
+}
+
+.resume-link:hover {
+  background-color: #d1a857;
+}
+
 .about-connect a:hover {
   transform: scale(1.15);
   color: var(--color-alt);

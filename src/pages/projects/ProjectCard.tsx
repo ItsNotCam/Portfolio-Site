@@ -68,14 +68,26 @@ export const ProjectCard = (props: IProjectCardProps): JSX.Element => {
 
   const CARD_SMALL = (): JSX.Element => (<>
     <div className="project-card-sm-info">
-      <h1 className="color-light">{PROJECT.name}</h1>
-      <ul className="project-tags-sm">
-        {PROJECT.tags.map(tag => 
-          <li key={uuidv4()}>
-            <span className="project-tag">{tag}</span>
-          </li>
-        )}
-      </ul>
+      <div className="project-card-sm-header">
+        <div className="project-card-header-l">
+          <h1 className="color-light">{PROJECT.name}</h1>
+          <ul className="project-tags-sm">
+            {PROJECT.tags.map(tag => 
+              <li key={uuidv4()}>
+                <span className="project-tag">{tag}</span>
+              </li>
+            )}
+          </ul>
+        </div>
+        <div className="project-card-sm-dropdown">
+          <IconButton onClick={() => setDroppedDown(!droppedDown)}>
+            {droppedDown
+              ? <ArrowDropDownOutlined className="project-icon-button" style={{fontSize: "3rem"}} />
+              : <ArrowLeftOutlined className="project-icon-button" style={{fontSize: "3rem"}}/>}
+          </IconButton>
+        </div>
+      </div>
+
       <div className={droppedDown ? `project-dropdown-sm shown` : "project-dropdown-sm hidden"}>
         <div className="project-card-sm-desc">
           {PROJECT.description.map(description => (
@@ -95,13 +107,6 @@ export const ProjectCard = (props: IProjectCardProps): JSX.Element => {
         </>) : null}
 
       </div>
-    </div>
-    <div className="project-card-sm-dropdown">
-      <IconButton onClick={() => setDroppedDown(!droppedDown)}>
-        {droppedDown
-          ? <ArrowDropDownOutlined className="project-icon-button" style={{fontSize: "2rem"}} />
-          : <ArrowLeftOutlined className="project-icon-button" style={{fontSize: "2rem"}}/>}
-      </IconButton>
     </div>
   </>)
 

@@ -7,6 +7,7 @@
   padding-inline: 5rem;
 }
 
+
 /* Large */
 .project-card-lg {
   background-color: var(--color-bg-mid);
@@ -51,6 +52,18 @@
 
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+}
+
+.project-card-sm-info {
+  width: 100%;
+}
+
+.project-card-sm-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .project-card-sm h1 {
@@ -68,6 +81,10 @@
 
 .project-card-sm-desc {
   padding-top: 1rem;
+}
+
+.project-card-sm-dropdown {
+  float: right;
 }
 
 .project-icon-button {

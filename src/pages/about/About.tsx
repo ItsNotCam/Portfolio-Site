@@ -1,5 +1,6 @@
 import { Email, GitHub, LinkedIn, StickyNote2Outlined } from '@mui/icons-material'
 import './_About.css'
+import { RESUME } from '../static/_LINKS'
 
 const iconStyle: React.CSSProperties = {
   transition: "transform 0.25s",
@@ -44,6 +45,14 @@ export default function About(): JSX.Element {
           </p>
 
           <br />
+
+          <div className="resume">
+            <a href={RESUME} target="_blank" className="color-light bg-dark resume-link">
+              <StickyNote2Outlined htmlColor='white' className="color-alt-hover social-icon" style={{fontSize: "2rem"}} titleAccess="View Resume"/>
+              My Resume
+              <StickyNote2Outlined htmlColor='white' className="color-alt-hover social-icon" style={{fontSize: "2rem"}} titleAccess="View Resume"/>
+            </a>
+          </div>
           <br />
           <p>
             <h3>
@@ -59,9 +68,6 @@ export default function About(): JSX.Element {
               </a>
               <a href="mailto:cyoung35@gmu.edu" target="_blank">
                 <Email htmlColor='white' className="color-alt-hover social-icon" style={iconStyle} titleAccess="Email Me"/>
-              </a>
-              <a href="Resume.pdf" target="_blank">
-                <StickyNote2Outlined htmlColor='white' className="color-alt-hover social-icon" style={iconStyle} titleAccess="View Resume"/>
               </a>
             </div>
           </p>
