@@ -54,12 +54,12 @@ export default function About(): JSX.Element {
             </a>
           </div>
           <br />
-          <p>
-            <h3>
+          <p className="about-connect">
+            <h3 className="connect-text">
               <span className="color-alt">Connect</span>
               <span className="color-light"> with Me</span>
             </h3> 
-            <div className="about-connect">
+            <div className="about-connect-links">
               <a href="https://github.com/ItsNotCam" target="_blank">
                 <GitHub htmlColor='white' className="color-alt-hover social-icon" style={iconStyle} titleAccess="My GitHub"/>
               </a>
@@ -72,7 +72,7 @@ export default function About(): JSX.Element {
             </div>
           </p>
         </div>
-        <img src="me.jpg" className="about-image"/>
+      <img src="me.jpg" className="about-image"/>
       </div>
     </section>
   )

@@ -39,7 +39,7 @@ export const ReadmeContent = (props: IReadmeContentProps): JSX.Element => {
     <div className={`readme-container ${props.visible ? "" : "readme-hidden"}`} onClick={tryHideContent}>
       <ClearOutlinedIcon 
         className="md-icon-button color-alt-hover" 
-        style={{fontSize: "3rem"}} 
+        style={{fontSize: "5em"}} 
         onClick={hideContent} 
       />
       <div id="markdown" className={"readme-content markdown"} {...mouseContext}>

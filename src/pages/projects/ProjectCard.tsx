@@ -15,11 +15,11 @@ export interface IProjectCardProps {
 
 export const styles = {
   iconStyle: {
-    fontSize: "3rem",
+    fontSize: "3em",
     color: "inherit"
   },
   githubStyle: {
-    fontSize: "2.5rem",
+    fontSize: "inherit",
     cursor: "pointer",
     color: "inherit"
   }
@@ -96,7 +96,7 @@ export const ProjectCard = (props: IProjectCardProps): JSX.Element => {
         </div>
 
         {hasLinks(PROJECT) ? (<>
-          <h2 className="color-alt">Links</h2>
+          <h2 className="color-alt p-link">Links</h2>
           <ProjectCardLinks 
             demoLink={PROJECT.demo_link} 
             readmeLink={PROJECT.readme_link} 

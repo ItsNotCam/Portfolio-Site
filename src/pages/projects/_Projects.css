@@ -53,6 +53,8 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  text-size-adjust: none;
 }
 
 .project-card-sm-info {
@@ -128,6 +130,7 @@
 
 .project-card-link {
   transition: transform 0.2s;
+  font-size: 3rem;
 }
 
 .project-card-link:hover {
@@ -162,6 +165,17 @@
   .project-list {
     grid-template-columns: 1fr;
     width: 80%;
+  }
+
+  .p-link {
+    font-size: 2em;
+    font-size-adjust: 500%;
+  }
+
+  .project-card-link {
+    transition: transform 0.2s;
+    margin-top: 0.5rem;
+    font-size: 4em;
   }
 }
 
