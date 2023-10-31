@@ -1,4 +1,4 @@
-import './_index.css';
+import './_Index.css';
 
 import { BrowserView } from 'react-device-detect';
 
