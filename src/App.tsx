@@ -1,24 +1,29 @@
+import './_Index.css';
+
 import { BrowserView } from 'react-device-detect';
 
 import CustomCursor from './pages/static/CustomCursor';
-import Experience from './pages/experience/Experience';
-import Socials from './pages/static/Socials'
+import Home from './pages/home/Home';
+import Nav from './pages/static/Nav';
 import About from './pages/about/About';
 import Projects from './pages/projects/Projects';
-import Home from './pages/home/Home';
-import Footer from './pages/static/Footer';
+import Experience from './pages/experience/Experience';
+
 
 export default function App(): JSX.Element {
   return (
     <>
+      <Nav />
       <Home />
       <About />
       <Projects />
       <Experience />
-      <Footer />
+      <br />
+      <br />
+      <br />
+      <br />
       <BrowserView>
         <CustomCursor />
-        <Socials />
       </BrowserView>
     </>
   )

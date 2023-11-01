@@ -1,121 +1,123 @@
-import { GitHub, CodeOutlined, LaunchOutlined, InfoOutlined } from '@mui/icons-material';
-import React, { useState } from "react";
-import CircularProgress from '@mui/material/CircularProgress';
+import { useState } from "react";
+import { CodeOutlined, ArrowLeftOutlined, ArrowDropDownOutlined } from "@mui/icons-material";
+import { IconButton } from '@mui/material';
 
-import { IProject } from "./ProjectList";
-import { uuidv4 } from '../../utilities';
+import { ProjectCardLinks } from "./ProjectCardLinks";
+import { IProject } from "./_ProjectList";
+import { uuidv4 } from "../../utilities";
+
 
 export interface IProjectCardProps {
-  project: IProject;
-  shown: boolean;
+  PROJECT: IProject;
   setReadmeContent: (content: string) => void;
   setShowReadmeContent: (show: boolean) => void;
 }
 
-export default function ProjectCard(props: IProjectCardProps): JSX.Element {
-  const [readmeContent, setReadmeContent] = useState<string | null>(null);
-  const [isGettingReadme, setIsGettingReadme] = useState<boolean>(false);
-  const hasLinks: boolean = props.project.github_link !== null || props.project.readme_link !== null || props.project.demo_link !== null;  
-
-  const UpdateReadme = (text: string): void => {   
-    setReadmeContent(text);
-    props.setReadmeContent(text); 
-    props.setShowReadmeContent(true);
-  }
-  
-  // add any custom styling based on keywords
-  const FormatText = (text: string): string => {
-    return text.replaceAll(":)", "😃");
-  }
-
-  const OpenReadme = () => {
-    console.log(readmeContent);
-    if(readmeContent) {
-      UpdateReadme(readmeContent);
-    } else {
-      let readme_link: string = PROJECT.readme_link?.link ?? "";
-      setIsGettingReadme(true);
-      
-      fetch(readme_link)
-        .then(res => res.text())
-        .then(text => {
-          const formattedText: string = FormatText(text);
-          UpdateReadme(formattedText);
-        })
-        .catch(() => {
-          const failedText: string = `# Failed to retrieve README file from GitHub. 
-          Please exit and visit the GitHub link to read more about this project.`;
-          UpdateReadme(failedText);
-          setReadmeContent(null);
-        })
-        .finally(() => setIsGettingReadme(false));
-    }
-  }
-
-  const OpenDemo = () => {
-    window.open(PROJECT.demo_link?.link, "_blank") 
-  }
-  
-  const { project: PROJECT } = props;
-  return (
-    <>
-      <div className="project-card-header" id={PROJECT.name.replaceAll(" ", "_")}>
-        <CodeOutlined className="color-light" style={styles.iconStyle} />
-        {hasLinks ? (
-          <div className="project-card-links">
-            {
-              PROJECT.github_link ? (
-                <a href={PROJECT.github_link?.link} target="_blank">
-                  <GitHub className="color-light color-alt-hover" style={styles.githubStyle} titleAccess="Open GitHub Repository"/>
-                </a>
-              ) : null
-            }
-            {
-              PROJECT.readme_link ? (
-                <InfoOutlined className="color-light color-alt-hover" style={styles.githubStyle} onClick={OpenReadme} titleAccess="Show Info" />
-              ) : null
-            }
-            {
-              PROJECT.demo_link ? (
-                <LaunchOutlined className="color-light color-alt-hover" style={styles.githubStyle} onClick={OpenDemo} titleAccess="Open Demo"/>
-              ) : null
-            }
-          </div>
-          ) : null
-        }
-      </div>
-      <div className="project-card-body">
-        <h3>{PROJECT.name}</h3>
-        <ul className="project-tech-tags">
-          {PROJECT.tags.map(tag => 
-            <li className="project-color-dark" key={uuidv4()}>
-              <i>{tag}</i>
-            </li>
-          )}
-        </ul>
-        <p>{PROJECT.description}</p>
-      </div>
-      
-      { isGettingReadme ? 
-        (
-          <div className="readme-loading">
-            <CircularProgress /> 
-          </div>
-        )
-        : null
-      }
-    </>
-  )
-}
-
-const styles: {iconStyle: React.CSSProperties, githubStyle: React.CSSProperties} = {
+export const styles = {
   iconStyle: {
-    transition: "transform 0.25s",
-    fontSize: "3rem",
+    fontSize: "3em",
+    color: "inherit"
   },
   githubStyle: {
-    transition: "transform 0.25s",
-    fontSize: "2.5rem",
-    cursor: "pointer"
+    fontSize: "inherit",
+    cursor: "pointer",
+    color: "inherit"
   }
 }
+
+const hasLinks = (PROJECT: IProject): boolean => {
+  return PROJECT.github_link !== undefined || PROJECT.demo_link !== undefined || PROJECT.readme_link !== undefined;
+}
+
+
+export const ProjectCard = (props: IProjectCardProps): JSX.Element => {
+  const [highlighted, setHighlighted] = useState<boolean>(false);
+  const [droppedDown, setDroppedDown] = useState<boolean>(false);
+
+  const { PROJECT } = props;
+  const mouseEvents: any = {
+    onMouseEnter: () => setHighlighted(true),
+    onMouseLeave: () => setHighlighted(false)
+  };
+
+  const CARD_LARGE = (): JSX.Element => (
+    <div className="project-card-lg" {...mouseEvents}>
+      <div className="project-card-header">
+        <CodeOutlined className="color-light color-alt-hover" style={styles.iconStyle} />
+        <ProjectCardLinks 
+          demoLink={PROJECT.demo_link} 
+          readmeLink={PROJECT.readme_link} 
+          gitLink={PROJECT.github_link} 
+          setShowReadmeContent={props.setShowReadmeContent}
+          setReadmeContent={props.setReadmeContent}
+        />
+      </div>
+      <p className="project-date color-darker">
+        {PROJECT.year}
+      </p>
+      {highlighted
+        ? <h1 className="color-alt">{PROJECT.name}</h1>
+        : <h1 className="color-light">{PROJECT.name}</h1>}
+      <ul className="project-tags-lg">
+        {PROJECT.tags.map(tag => 
+          <li key={uuidv4()}>
+            <span className="project-tag">{tag}</span>
+          </li>
+        )}
+      </ul>
+      {PROJECT.description.map(
+        description => <p key={uuidv4()}>{description}</p>
+      )}
+    </div>)
+
+  const CARD_SMALL = (): JSX.Element => (
+  <div className="project-card-sm" {...mouseEvents}>
+    <div className="project-card-sm-info">
+      <div className="project-card-sm-header">
+        <div className="project-card-header-l">
+          <span className="project-date color-darker">
+            {PROJECT.year}
+          </span>
+          <h1 className="color-light">{PROJECT.name}</h1>
+          <ul className="project-tags-sm">
+            {PROJECT.tags.map(tag => 
+              <li key={uuidv4()}>
+                <span className="project-tag">{tag}</span>
+              </li>
+            )}
+          </ul>
+        </div>
+        <div className="project-card-sm-dropdown">
+          <IconButton onClick={() => setDroppedDown(!droppedDown)}>
+            {droppedDown
+              ? <ArrowDropDownOutlined className="project-icon-button" style={{fontSize: "3rem"}} />
+              : <ArrowLeftOutlined className="project-icon-button" style={{fontSize: "3rem"}}/>}
+          </IconButton>
+        </div>
+      </div>
+      <div className={droppedDown ? `project-dropdown-sm shown` : "project-dropdown-sm hidden"}>
+        <div className="project-card-sm-desc">
+          {PROJECT.description.map(description => (
+            <p key={uuidv4()} className="color-light" style={{opacity: 0.9}}>{description}</p>
+          ))}
+        </div>
+
+        {hasLinks(PROJECT) ? (<>
+          <h2 className="color-alt p-link">More</h2>
+          <ProjectCardLinks 
+            demoLink={PROJECT.demo_link} 
+            readmeLink={PROJECT.readme_link} 
+            gitLink={PROJECT.github_link} 
+            setShowReadmeContent={props.setShowReadmeContent}
+            setReadmeContent={props.setReadmeContent}
+          />
+        </>) : null}
+      </div>
+    </div>
+  </div>)
+
+  return (<>
+    <CARD_LARGE />
+    <CARD_SMALL />
+  </>);
+};

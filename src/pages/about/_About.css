@@ -1,0 +1,127 @@
+.about-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  max-width: 1000px;
+  margin-inline: 5rem;
+
+  border-radius: 0.5rem;
+  padding-inline: 3rem;
+  padding-block: 2.5rem;
+  background-color: var(--color-bg-mid);
+}
+
+.about-description {
+  margin-right: 3rem;
+}
+
+.about-description p {
+  text-size-adjust: 200%;
+}
+
+.about-description h2 {
+  font-size: 3rem;
+}
+
+.about-description h3 {
+  font-size: 1.65em;
+  margin-bottom: 1.2rem;
+}
+
+.about-description p {
+  font-size: 1.3em;
+  color: var(--color-darker);
+}
+
+.about-container img {
+  height: min(25vw, 350px);
+  width: min(25vw, 350px);
+  border-radius: 50%;
+  filter: drop-shadow(0 0px 5px #e1e1e1);
+}
+
+.about-connect-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* margin-top: 1rem; */
+  gap: 1rem;
+}
+
+.about-connect {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  /* align-items: center; */
+}
+
+.about-connect-links a {
+  transition: transform 0.2s;
+}
+
+.resume {
+  display: flex;
+  align-items: center;
+  text-size-adjust: 200%;
+  width: 100%;
+}
+
+.resume-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  padding: 0.5em;
+  font-size: 1.5em;
+  border-radius: 8px;
+
+  background-color: var(--color-bg-dark);
+
+  transition: all 0.3s ease;
+}
+
+.resume-link:hover {
+  background-color: #d1a857;
+}
+
+.about-connect-links a:hover {
+  transform: scale(1.15);
+  color: var(--color-alt);
+}
+
+@media (max-width: 1000px) {
+  .about-connect {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-container {
+    flex-direction: column;
+  }
+
+  .about-container img {
+    display: none;
+  }
+
+  .connect-text {
+    display: none;
+  }
+
+  .resume {
+    justify-content: center;
+  }
+
+  .about-connect-links {
+    margin-top: 0;
+    gap: 2rem;
+    font-size: 1.2em;
+    justify-content: center;
+  }
+
+  .about-description {
+    margin-right: 0;
+  }
+}

@@ -1,60 +1,92 @@
+import { useState } from "react";
 import { uuidv4 } from "../../utilities";
-import { IExperience, ILink } from "./ExperienceList";
+import { IExperience } from "./_ExperienceList";
 
-export interface IExperienceCardProps {
-  experience: IExperience;
-  shown: boolean;
-}
+import { ArrowLeftOutlined, ArrowDropDownOutlined } from "@mui/icons-material";
+import { IconButton } from '@mui/material';
 
-const TechnologyTag = (props: {tag: string}): JSX.Element => {
-  return <li className="exp-tag color-alt-brighter"> {props.tag} </li>
-}
+export default function ExperienceCard(props: IExperience): JSX.Element {
+  const [droppedDown, setDroppedDown] = useState<boolean>(false);
 
-const TechLink = (props: {tag: ILink}): JSX.Element => {
-  const {link, name} = props.tag;
-  return (
-    <li className="exp-link">
-      🔗<a href={link} className="color-light color-alt-hover" target="_blank">{name}</a>
-    </li>
-  )
-}
-
-export default function ExperienceCard(props: IExperienceCardProps): JSX.Element {
-  const {experience: EXPERIENCE } = props;
-
-  const date: string = `${EXPERIENCE.start_month} ${EXPERIENCE.start_year} - ${EXPERIENCE.end_month} ${EXPERIENCE.end_year}`;
-  // <div className={`exp-card ${!shown ? "exp-hidden" : ""}`}>
-  return (
-    <div className={`exp-card`}>
-      <div className="exp-info">
-        <div className="exp-date">
-          {date}
-        </div>
-        <h2 className="exp-title">
-          <span className="color-alt"> {EXPERIENCE.title} </span> <span className="exp-title-separator">//</span> {EXPERIENCE.company}
+  const LARGE_CARD = (): JSX.Element => {
+    return (
+      <div className="experience-card-lg">
+        <p className="experience-date color-darker">
+          {props.start_month} {props.start_year} - {props.end_month} {props.end_year}
+        </p>
+        <h1>
+          <span className="color-alt">{props.title}</span> 
+        </h1>
+        <h2>
+          <span className="color-dark"> @ </span>
+          <a href={props.company_link} target="_blank" className="color-light color-alt-hover">
+            {props.company}
+          </a>
         </h2>
-        <div className="exp-description-container">
-          <p className="exp-p-tag">{"<p>"}</p>
-          <div className="exp-description">
-            <div className="exp-vertical-line" />
-            <p>{EXPERIENCE.job_description}</p>
-          </div>
-          <p className="exp-p-tag">{"</p>"}</p>
+        <div className="experience-description">
+          {props.job_description.map(
+            description => <p className="color-light" style={{opacity: "85%"}} key={uuidv4()}>{description}</p>
+          )}
         </div>
-        {EXPERIENCE.links.length > 0 ? (
-            <div className="exp-links">
-              <ul>
-                {EXPERIENCE.links.map(link => <TechLink tag={link} key={uuidv4()}/>)}
-              </ul>
-            </div>
-          ) : null
-        }
-        <div className="exp-tags">
-          <ul>
-            {EXPERIENCE.tags.map(tag => <TechnologyTag tag={tag} key={uuidv4()} />)}
-          </ul>
-        </div>
+        <ul className="experience-tags">
+          {props.tags.map(tag => 
+            <li className="experience-tag" key={uuidv4()}>
+              {tag}
+            </li>
+          )}
+        </ul>
       </div>
-    </div>
-  )
+    )
+  }
+
+  const SMALL_CARD = (): JSX.Element => {
+    return (
+      <div className="experience-card-sm">
+        <div className="experience-card-sm-header">
+          <div className="info">
+            <p className="experience-date color-darker">
+              {props.start_month} {props.start_year} - {props.end_month} {props.end_year}
+            </p>
+            <h1>
+              <span className="color-alt">{props.title}</span>
+              <br />
+            </h1>
+            <h2>
+              <span className="color-dark"> @ </span>
+              <a href={props.company_link} target="_blank" className="color-light color-alt-hover">
+                {props.company}
+              </a>
+            </h2>
+            <ul className="experience-tags">
+              {props.tags.map(tag => 
+                <li className="experience-tag" key={uuidv4()}>
+                  {tag}
+                </li>
+              )}
+            </ul>
+          </div>
+          <div className="project-card-sm-dropdown">
+            <IconButton onClick={() => setDroppedDown(!droppedDown)}>
+              {droppedDown
+                ? <ArrowDropDownOutlined className="project-icon-button" style={{fontSize: "3rem"}} />
+                : <ArrowLeftOutlined className="project-icon-button" style={{fontSize: "3rem"}}/>}
+            </IconButton>
+          </div>
+        </div>
+        {droppedDown ?( 
+            <div className="experience-description">
+              {props.job_description.map(
+                description => <p className="color-light" style={{opacity: "85%"}} key={uuidv4()}>{description}</p>
+              )}
+            </div>
+          ): null}
+      </div>
+    )
+  }
+
+
+  return (<>
+    <LARGE_CARD />
+    <SMALL_CARD />
+  </>);
 }
