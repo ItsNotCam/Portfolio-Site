@@ -48,8 +48,16 @@
   width: 100%;
 }
 
+.experience-date {
+  width: 100%;
+}
+
 .experience-card-sm h1 {
   font-size: 2em;
+}
+
+.info {
+  width: 100%;
 }
 
 .experience-description p {
