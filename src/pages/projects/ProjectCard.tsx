@@ -40,36 +40,38 @@ export const ProjectCard = (props: IProjectCardProps): JSX.Element => {
     onMouseLeave: () => setHighlighted(false)
   };
 
-  const CARD_LARGE = (): JSX.Element => (<>
-    <div className="project-card-header">
-      <CodeOutlined className="color-light color-alt-hover" style={styles.iconStyle} />
-      <ProjectCardLinks 
-        demoLink={PROJECT.demo_link} 
-        readmeLink={PROJECT.readme_link} 
-        gitLink={PROJECT.github_link} 
-        setShowReadmeContent={props.setShowReadmeContent}
-        setReadmeContent={props.setReadmeContent}
-      />
-    </div>
-    <p className="project-date color-darker">
-      {PROJECT.year}
-    </p>
-    {highlighted
-      ? <h1 className="color-alt">{PROJECT.name}</h1>
-      : <h1 className="color-light">{PROJECT.name}</h1>}
-    <ul className="project-tags-lg">
-      {PROJECT.tags.map(tag => 
-        <li key={uuidv4()}>
-          <span className="project-tag">{tag}</span>
-        </li>
+  const CARD_LARGE = (): JSX.Element => (
+    <div className="project-card-lg" {...mouseEvents}>
+      <div className="project-card-header">
+        <CodeOutlined className="color-light color-alt-hover" style={styles.iconStyle} />
+        <ProjectCardLinks 
+          demoLink={PROJECT.demo_link} 
+          readmeLink={PROJECT.readme_link} 
+          gitLink={PROJECT.github_link} 
+          setShowReadmeContent={props.setShowReadmeContent}
+          setReadmeContent={props.setReadmeContent}
+        />
+      </div>
+      <p className="project-date color-darker">
+        {PROJECT.year}
+      </p>
+      {highlighted
+        ? <h1 className="color-alt">{PROJECT.name}</h1>
+        : <h1 className="color-light">{PROJECT.name}</h1>}
+      <ul className="project-tags-lg">
+        {PROJECT.tags.map(tag => 
+          <li key={uuidv4()}>
+            <span className="project-tag">{tag}</span>
+          </li>
+        )}
+      </ul>
+      {PROJECT.description.map(
+        description => <p key={uuidv4()}>{description}</p>
       )}
-    </ul>
-    {PROJECT.description.map(
-      description => <p key={uuidv4()}>{description}</p>
-    )}
-  </>)
+    </div>)
 
-  const CARD_SMALL = (): JSX.Element => (<>
+  const CARD_SMALL = (): JSX.Element => (
+  <div className="project-card-sm" {...mouseEvents}>
     <div className="project-card-sm-info">
       <div className="project-card-sm-header">
         <div className="project-card-header-l">
@@ -93,7 +95,6 @@ export const ProjectCard = (props: IProjectCardProps): JSX.Element => {
           </IconButton>
         </div>
       </div>
-
       <div className={droppedDown ? `project-dropdown-sm shown` : "project-dropdown-sm hidden"}>
         <div className="project-card-sm-desc">
           {PROJECT.description.map(description => (
@@ -111,17 +112,12 @@ export const ProjectCard = (props: IProjectCardProps): JSX.Element => {
             setReadmeContent={props.setReadmeContent}
           />
         </>) : null}
-
       </div>
     </div>
-  </>)
+  </div>)
 
   return (<>
-    <div className="project-card-lg" {...mouseEvents}>
-      <CARD_LARGE />
-    </div>
-    <div className="project-card-sm" {...mouseEvents}> {/*onClick={() => setDroppedDown(!droppedDown)}>*/}
-      <CARD_SMALL />
-    </div>
+    <CARD_LARGE />
+    <CARD_SMALL />
   </>);
 };
