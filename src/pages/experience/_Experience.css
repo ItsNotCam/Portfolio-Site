@@ -17,8 +17,19 @@
   display: none;
 }
 
-.experience-card-lg p {
+.experience-card-lg p,
+.experience-card-sm p {
   text-size-adjust: 170%;
+}
+
+.experience-card-lg a,
+.experience-card-sm a {
+  text-decoration: none;
+}
+
+.experience-card-lg a:hover,
+.experience-card-sm a:hover {
+  text-decoration: underline;
 }
 
 .experience-card-lg h1 {

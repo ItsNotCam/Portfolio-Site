@@ -16,9 +16,13 @@ export default function ExperienceCard(props: IExperience): JSX.Element {
         </p>
         <h1>
           <span className="color-alt">{props.title}</span> 
-          <span className="color-dark"> //</span>
-          <span className="color-light"> {props.company}</span>
         </h1>
+        <h2>
+          <span className="color-dark"> @ </span>
+          <a href={props.company_link} target="_blank" className="color-light color-alt-hover">
+            {props.company}
+          </a>
+        </h2>
         <div className="experience-description">
           {props.job_description.map(
             description => <p className="color-light" style={{opacity: "85%"}} key={uuidv4()}>{description}</p>
@@ -44,10 +48,15 @@ export default function ExperienceCard(props: IExperience): JSX.Element {
               {props.start_month} {props.start_year} - {props.end_month} {props.end_year}
             </p>
             <h1>
-              <span className="color-alt">{props.title}</span> 
-              <span className="color-dark"> //</span>
-              <span className="color-light"> {props.company}</span>
+              <span className="color-alt">{props.title}</span>
+              <br />
             </h1>
+            <h2>
+              <span className="color-dark"> @ </span>
+              <a href={props.company_link} target="_blank" className="color-light color-alt-hover">
+                {props.company}
+              </a>
+            </h2>
             <ul className="experience-tags">
               {props.tags.map(tag => 
                 <li className="experience-tag" key={uuidv4()}>
