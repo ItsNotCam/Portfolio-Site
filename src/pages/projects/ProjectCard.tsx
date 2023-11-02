@@ -42,8 +42,13 @@ export const ProjectCard = (props: IProjectCardProps): JSX.Element => {
 
   const CARD_LARGE = (): JSX.Element => (
     <div className="project-card-lg" {...mouseEvents}>
-      <div className="project-card-header">
-        <CodeOutlined className="color-light color-alt-hover" style={styles.iconStyle} />
+      <div className="project-card-lg-header">
+        <div>
+          <p className="project-date color-darker">
+            {PROJECT.year}
+          </p>
+          <h1 className="color-alt">{PROJECT.name}</h1>
+        </div>
         <ProjectCardLinks 
           demoLink={PROJECT.demo_link} 
           readmeLink={PROJECT.readme_link} 
@@ -52,12 +57,6 @@ export const ProjectCard = (props: IProjectCardProps): JSX.Element => {
           setReadmeContent={props.setReadmeContent}
         />
       </div>
-      <p className="project-date color-darker">
-        {PROJECT.year}
-      </p>
-      {highlighted
-        ? <h1 className="color-alt">{PROJECT.name}</h1>
-        : <h1 className="color-light">{PROJECT.name}</h1>}
       <ul className="project-tags-lg">
         {PROJECT.tags.map(tag => 
           <li key={uuidv4()}>
