@@ -1,7 +1,7 @@
 import './_Projects.css';
 import './_Markdown.css';
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -14,6 +14,7 @@ interface IReadmeContentProps {
 
 export const ReadmeContent = (props: IReadmeContentProps): JSX.Element => {
   const [canHideContent, setCanHideConent] = useState<boolean>(false);
+  const divRef: any = useRef(null);  
 
   let mouseContext: any = {
     onMouseEnter: () => setCanHideConent(false),
@@ -25,6 +26,12 @@ export const ReadmeContent = (props: IReadmeContentProps): JSX.Element => {
       hideContent();
     }
   }
+
+  useEffect(() => {
+    divRef.current.scrollTo({
+      top: 0
+    });
+  }, [props.visible])
 
   const hideContent = () => {
     let md: HTMLElement | null = document.getElementById("markdown");
@@ -42,7 +49,7 @@ export const ReadmeContent = (props: IReadmeContentProps): JSX.Element => {
         style={{fontSize: "4em"}} 
         onClick={hideContent} 
       />
-      <div id="markdown" className={"readme-content markdown"} {...mouseContext}>
+      <div id="markdown" className={"readme-content markdown"} {...mouseContext} ref={divRef}>
         <Markdown remarkPlugins={[remarkGfm]}>
           {props.content}
         </Markdown>
