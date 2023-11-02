@@ -43,13 +43,11 @@ export const ProjectCard = (props: IProjectCardProps): JSX.Element => {
 
   const CARD_LARGE = (): JSX.Element => (
     <div className="project-card-lg">
+      <p className="project-date color-darker">
+        {PROJECT.year}
+      </p>
       <div className="project-card-lg-header">
-        <div>
-          <p className="project-date color-darker">
-            {PROJECT.year}
-          </p>
-          <h1 className="color-alt">{PROJECT.name}</h1>
-        </div>
+        <h1 className="color-alt">{PROJECT.name}</h1>
         <ProjectCardLinks 
           demoLink={PROJECT.demo_link} 
           readmeLink={PROJECT.readme_link} 
