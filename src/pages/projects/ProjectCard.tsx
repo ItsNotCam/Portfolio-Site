@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CodeOutlined, ArrowLeftOutlined, ArrowDropDownOutlined } from "@mui/icons-material";
+import { ArrowLeftOutlined, ArrowDropDownOutlined } from "@mui/icons-material";
 import { IconButton } from '@mui/material';
 
 import { ProjectCardLinks } from "./ProjectCardLinks";
@@ -31,17 +31,18 @@ const hasLinks = (PROJECT: IProject): boolean => {
 
 
 export const ProjectCard = (props: IProjectCardProps): JSX.Element => {
-  const [highlighted, setHighlighted] = useState<boolean>(false);
+  // const [highlighted, setHighlighted] = useState<boolean>(false);
   const [droppedDown, setDroppedDown] = useState<boolean>(false);
 
   const { PROJECT } = props;
-  const mouseEvents: any = {
-    onMouseEnter: () => setHighlighted(true),
-    onMouseLeave: () => setHighlighted(false)
-  };
+  // <div className="project-card-lg" {...mouseEvents}>
+  // const mouseEvents: any = {
+  //   onMouseEnter: () => setHighlighted(true),
+  //   onMouseLeave: () => setHighlighted(false)
+  // };
 
   const CARD_LARGE = (): JSX.Element => (
-    <div className="project-card-lg" {...mouseEvents}>
+    <div className="project-card-lg">
       <div className="project-card-lg-header">
         <div>
           <p className="project-date color-darker">
@@ -69,8 +70,9 @@ export const ProjectCard = (props: IProjectCardProps): JSX.Element => {
       )}
     </div>)
 
+//<div className="project-card-sm" {...mouseEvents}>
   const CARD_SMALL = (): JSX.Element => (
-  <div className="project-card-sm" {...mouseEvents}>
+  <div className="project-card-sm">
     <div className="project-card-sm-info">
       <div className="project-card-sm-header">
         <div className="project-card-header-l">
