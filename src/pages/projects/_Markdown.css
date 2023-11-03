@@ -79,9 +79,12 @@ ol {
 }
 
 .markdown a {
-  color: var(--color-alt);
+  color: var(--color-light);
 }
 
+.markdown a:hover {
+  color: var(--color-alt);
+}
 
 .md-icon-button {
   position: fixed;
