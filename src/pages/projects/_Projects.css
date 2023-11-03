@@ -7,6 +7,22 @@
   padding-inline: 5rem;
 }
 
+.projects-title {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+
+.projects-title h1 {
+  font-size: 3rem;
+}
+
+.projects-title i {
+  font-size: 1.33rem;
+}
 
 /* Large */
 .project-card-lg {
