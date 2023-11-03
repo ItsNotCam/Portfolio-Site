@@ -31,33 +31,32 @@ const hasLinks = (PROJECT: IProject): boolean => {
 
 
 export const ProjectCard = (props: IProjectCardProps): JSX.Element => {
-  // const [highlighted, setHighlighted] = useState<boolean>(false);
+  const [highlighted, setHighlighted] = useState<boolean>(false);
   const [droppedDown, setDroppedDown] = useState<boolean>(false);
 
   const { PROJECT } = props;
-  // <div className="project-card-lg" {...mouseEvents}>
-  // const mouseEvents: any = {
-  //   onMouseEnter: () => setHighlighted(true),
-  //   onMouseLeave: () => setHighlighted(false)
-  // };
+  const mouseEvents: any = {
+    onMouseEnter: () => setHighlighted(true),
+    onMouseLeave: () => setHighlighted(false)
+  };
 
   const CARD_LARGE = (): JSX.Element => (
-    <div className="project-card-lg">
+    <div className="project-card-lg" {...mouseEvents}>
       <p className="project-date color-darker">
         {PROJECT.year}
       </p>
       <div className="project-card-lg-header">
-        <h1 className="color-alt">{PROJECT.name}</h1>
-        <ProjectCardLinks 
-          demoLink={PROJECT.demo_link} 
-          readmeLink={PROJECT.readme_link} 
-          gitLink={PROJECT.github_link} 
+        <h1 className={`color-${highlighted ? "alt" : "light"}`}>{PROJECT.name}</h1>
+        <ProjectCardLinks
+          demoLink={PROJECT.demo_link}
+          readmeLink={PROJECT.readme_link}
+          gitLink={PROJECT.github_link}
           setShowReadmeContent={props.setShowReadmeContent}
           setReadmeContent={props.setReadmeContent}
         />
       </div>
       <ul className="project-tags-lg">
-        {PROJECT.tags.map(tag => 
+        {PROJECT.tags.map(tag =>
           <li key={uuidv4()}>
             <span className="project-tag">{tag}</span>
           </li>
@@ -68,52 +67,52 @@ export const ProjectCard = (props: IProjectCardProps): JSX.Element => {
       )}
     </div>)
 
-//<div className="project-card-sm" {...mouseEvents}>
+  //<div className="project-card-sm" {...mouseEvents}>
   const CARD_SMALL = (): JSX.Element => (
-  <div className="project-card-sm">
-    <div className="project-card-sm-info">
-      <div className="project-card-sm-header">
-        <div className="project-card-header-l">
-          <span className="project-date color-darker">
-            {PROJECT.year}
-          </span>
-          <h1 className="color-light">{PROJECT.name}</h1>
-          <ul className="project-tags-sm">
-            {PROJECT.tags.map(tag => 
-              <li key={uuidv4()}>
-                <span className="project-tag">{tag}</span>
-              </li>
-            )}
-          </ul>
+    <div className="project-card-sm">
+      <div className="project-card-sm-info">
+        <div className="project-card-sm-header">
+          <div className="project-card-header-l">
+            <span className="project-date color-darker">
+              {PROJECT.year}
+            </span>
+            <h1 className="color-light">{PROJECT.name}</h1>
+            <ul className="project-tags-sm">
+              {PROJECT.tags.map(tag =>
+                <li key={uuidv4()}>
+                  <span className="project-tag">{tag}</span>
+                </li>
+              )}
+            </ul>
+          </div>
+          <div className="project-card-sm-dropdown">
+            <IconButton onClick={() => setDroppedDown(!droppedDown)}>
+              {droppedDown
+                ? <ArrowDropDownOutlined className="project-icon-button" style={{ fontSize: "3rem" }} />
+                : <ArrowLeftOutlined className="project-icon-button" style={{ fontSize: "3rem" }} />}
+            </IconButton>
+          </div>
         </div>
-        <div className="project-card-sm-dropdown">
-          <IconButton onClick={() => setDroppedDown(!droppedDown)}>
-            {droppedDown
-              ? <ArrowDropDownOutlined className="project-icon-button" style={{fontSize: "3rem"}} />
-              : <ArrowLeftOutlined className="project-icon-button" style={{fontSize: "3rem"}}/>}
-          </IconButton>
-        </div>
-      </div>
-      <div className={droppedDown ? `project-dropdown-sm shown` : "project-dropdown-sm hidden"}>
-        <div className="project-card-sm-desc">
-          {PROJECT.description.map(description => (
-            <p key={uuidv4()} className="color-light" style={{opacity: 0.9}}>{description}</p>
-          ))}
-        </div>
+        <div className={droppedDown ? `project-dropdown-sm shown` : "project-dropdown-sm hidden"}>
+          <div className="project-card-sm-desc">
+            {PROJECT.description.map(description => (
+              <p key={uuidv4()} className="color-light" style={{ opacity: 0.9 }}>{description}</p>
+            ))}
+          </div>
 
-        {hasLinks(PROJECT) ? (<>
-          <h2 className="color-alt p-link">More</h2>
-          <ProjectCardLinks 
-            demoLink={PROJECT.demo_link} 
-            readmeLink={PROJECT.readme_link} 
-            gitLink={PROJECT.github_link} 
-            setShowReadmeContent={props.setShowReadmeContent}
-            setReadmeContent={props.setReadmeContent}
-          />
-        </>) : null}
+          {hasLinks(PROJECT) ? (<>
+            <h2 className="color-alt p-link">More</h2>
+            <ProjectCardLinks
+              demoLink={PROJECT.demo_link}
+              readmeLink={PROJECT.readme_link}
+              gitLink={PROJECT.github_link}
+              setShowReadmeContent={props.setShowReadmeContent}
+              setReadmeContent={props.setReadmeContent}
+            />
+          </>) : null}
+        </div>
       </div>
-    </div>
-  </div>)
+    </div>)
 
   return (<>
     <CARD_LARGE />

@@ -22,7 +22,7 @@ export default function Home(): JSX.Element {
             <span className="blinking-text color-light">_</span>
           </h1>
         </div>
-        
+
         <div className="home-title-sm">
           <h1>
             <span className="color-alt">CAM</span>

@@ -15,7 +15,7 @@ export default function ExperienceCard(props: IExperience): JSX.Element {
           {props.start_month} {props.start_year} - {props.end_month} {props.end_year}
         </p>
         <h1>
-          <span className="color-alt">{props.title}</span> 
+          <span className="color-alt">{props.title}</span>
         </h1>
         <h2>
           <span className="color-dark"> @ </span>
@@ -25,11 +25,11 @@ export default function ExperienceCard(props: IExperience): JSX.Element {
         </h2>
         <div className="experience-description">
           {props.job_description.map(
-            description => <p className="color-light" style={{opacity: "85%"}} key={uuidv4()}>{description}</p>
+            description => <p className="color-light" style={{ opacity: "85%" }} key={uuidv4()}>{description}</p>
           )}
         </div>
         <ul className="experience-tags">
-          {props.tags.map(tag => 
+          {props.tags.map(tag =>
             <li className="experience-tag" key={uuidv4()}>
               {tag}
             </li>
@@ -58,7 +58,7 @@ export default function ExperienceCard(props: IExperience): JSX.Element {
               </a>
             </h2>
             <ul className="experience-tags">
-              {props.tags.map(tag => 
+              {props.tags.map(tag =>
                 <li className="experience-tag" key={uuidv4()}>
                   {tag}
                 </li>
@@ -68,18 +68,18 @@ export default function ExperienceCard(props: IExperience): JSX.Element {
           <div className="project-card-sm-dropdown">
             <IconButton onClick={() => setDroppedDown(!droppedDown)}>
               {droppedDown
-                ? <ArrowDropDownOutlined className="project-icon-button" style={{fontSize: "3rem"}} />
-                : <ArrowLeftOutlined className="project-icon-button" style={{fontSize: "3rem"}}/>}
+                ? <ArrowDropDownOutlined className="project-icon-button" style={{ fontSize: "3rem" }} />
+                : <ArrowLeftOutlined className="project-icon-button" style={{ fontSize: "3rem" }} />}
             </IconButton>
           </div>
         </div>
-        {droppedDown ?( 
-            <div className="experience-description">
-              {props.job_description.map(
-                description => <p className="color-light" style={{opacity: "85%"}} key={uuidv4()}>{description}</p>
-              )}
-            </div>
-          ): null}
+        {droppedDown ? (
+          <div className="experience-description">
+            {props.job_description.map(
+              description => <p className="color-light" style={{ opacity: "85%" }} key={uuidv4()}>{description}</p>
+            )}
+          </div>
+        ) : null}
       </div>
     )
   }

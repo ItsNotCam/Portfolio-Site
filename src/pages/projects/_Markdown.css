@@ -18,7 +18,7 @@
   margin-bottom: 0.5rem;
   color: #E3B252;
   padding-bottom: 0.2rem;
-  border-bottom: 2px solid rgba(195, 195, 195, 0.7); 
+  border-bottom: 2px solid rgba(195, 195, 195, 0.7);
   text-size-adjust: 300%;
 }
 
@@ -29,7 +29,8 @@
   color: #f8f8f8;
 }
 
-.markdown ul, ol {
+.markdown ul,
+ol {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -40,7 +41,7 @@
   position: fixed;
   height: 100vh;
   width: 100vw;
-  background-color: rgba(12,12,12,0.8);
+  background-color: rgba(12, 12, 12, 0.8);
   top: 0;
   left: 0;
 
@@ -64,7 +65,7 @@
 }
 
 .markdown p {
-  color:rgb(181, 181, 181);
+  color: rgb(181, 181, 181);
   margin-top: 1rem;
   margin-bottom: 1rem;
   font-weight: 100;
@@ -72,7 +73,7 @@
 }
 
 .markdown li {
-  color:rgb(181, 181, 181);
+  color: rgb(181, 181, 181);
   font-size: 1.2rem;
   font-weight: 100;
 }

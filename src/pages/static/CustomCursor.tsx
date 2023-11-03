@@ -11,7 +11,7 @@ export default function CustomCursor(): JSX.Element {
 	// const [isHoveringOverClickable, setIsHoveringOverClickable] = useState<boolean>(false)
 
 	document.addEventListener('mousemove', (e: MouseEvent) => {
-		setMousePos({ left: e.pageX, top: e.pageY});
+		setMousePos({ left: e.pageX, top: e.pageY });
 	})
 
 	// document.onmouseover = function(e) {

@@ -6,7 +6,7 @@ import { uuidv4 } from "../../utilities";
 import { PROJECTS } from "./_ProjectList";
 import { ProjectCard } from "./ProjectCard";
 import { ReadmeContent } from "./ReadmeContent";
-import {disableBodyScroll, enableBodyScroll} from 'body-scroll-lock';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
 
 export default function Projects(): JSX.Element {
@@ -18,9 +18,9 @@ export default function Projects(): JSX.Element {
 
   return (
     <section id="projects">
-      <ReadmeContent 
-        content={readmeContent} 
-        visible={showReadmeContent} 
+      <ReadmeContent
+        content={readmeContent}
+        visible={showReadmeContent}
         setShowReadmeVisible={setShowReadmeContent}
       />
       <h1 className="section-title">
@@ -28,10 +28,10 @@ export default function Projects(): JSX.Element {
         <span className="color-light"> I've Made</span>
       </h1>
       <div className="project-list">
-        {PROJECTS.map(project => 
-          <ProjectCard 
-            PROJECT={project} 
-            setReadmeContent={setReadmeContent} 
+        {PROJECTS.map(project =>
+          <ProjectCard
+            PROJECT={project}
+            setReadmeContent={setReadmeContent}
             setShowReadmeContent={setShowReadmeContent}
             key={uuidv4()}
           />

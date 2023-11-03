@@ -27,20 +27,20 @@ export default function About(): JSX.Element {
 
           <p>I am a current student at <span className="color-alt">George Mason University.</span></p>
           <p>
-            In the 
-            <span className="color-light"> Fall of 2024 </span> 
-            I will be receiving my 
+            In the
+            <span className="color-light"> Fall of 2024 </span>
+            I will be receiving my
             <span className="color-light"> Major in Information Technology </span>
-            with a concentration in 
-            <span className="color-light"> Software Engineering </span> 
-            and a 
+            with a concentration in
+            <span className="color-light"> Software Engineering </span>
+            and a
             <span className="color-light"> Minor in Computer Sience.</span>
           </p>
 
           <br />
 
           <p>
-            I am a lifelong learner and am currently looking for internships 
+            I am a lifelong learner and am currently looking for internships
             and experience within the Software Engineering field.
           </p>
 
@@ -48,9 +48,9 @@ export default function About(): JSX.Element {
 
           <div className="resume">
             <a href={RESUME} target="_blank" className="color-light bg-dark resume-link">
-              <StickyNote2Outlined htmlColor='white' className="color-alt-hover social-icon" style={{fontSize: "2rem"}} titleAccess="View Resume"/>
+              <StickyNote2Outlined htmlColor='white' className="color-alt-hover social-icon" style={{ fontSize: "2rem" }} titleAccess="View Resume" />
               My Resume
-              <StickyNote2Outlined htmlColor='white' className="color-alt-hover social-icon" style={{fontSize: "2rem"}} titleAccess="View Resume"/>
+              <StickyNote2Outlined htmlColor='white' className="color-alt-hover social-icon" style={{ fontSize: "2rem" }} titleAccess="View Resume" />
             </a>
           </div>
           <br />
@@ -58,21 +58,21 @@ export default function About(): JSX.Element {
             <h3 className="connect-text">
               <span className="color-alt">Connect</span>
               <span className="color-light"> with Me</span>
-            </h3> 
+            </h3>
             <div className="about-connect-links">
               <a href="https://github.com/ItsNotCam" target="_blank">
-                <GitHub htmlColor='white' className="color-alt-hover social-icon" style={iconStyle} titleAccess="My GitHub"/>
+                <GitHub htmlColor='white' className="color-alt-hover social-icon" style={iconStyle} titleAccess="My GitHub" />
               </a>
               <a href="https://www.linkedin.com/in/cameron-young-37b173129/" target="_blank">
-                <LinkedIn htmlColor='white'  className="color-alt-hover social-icon" style={iconStyle} titleAccess="My LinkedIn"/>
+                <LinkedIn htmlColor='white' className="color-alt-hover social-icon" style={iconStyle} titleAccess="My LinkedIn" />
               </a>
               <a href="mailto:cyoung35@gmu.edu" target="_blank">
-                <Email htmlColor='white' className="color-alt-hover social-icon" style={iconStyle} titleAccess="Email Me"/>
+                <Email htmlColor='white' className="color-alt-hover social-icon" style={iconStyle} titleAccess="Email Me" />
               </a>
             </div>
           </p>
         </div>
-      <img src="me.jpg" className="about-image"/>
+        <img src="me.jpg" className="about-image" />
       </div>
     </section>
   )

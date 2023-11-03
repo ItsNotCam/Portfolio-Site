@@ -12,11 +12,12 @@
   left: 50%;
   width: 24px;
   height: 40px;
-  margin-left: -15px; 
+  margin-left: -15px;
   border: 2px solid #fff;
   border-radius: 50px;
   box-sizing: border-box;
 }
+
 #scroll a span::before {
   position: absolute;
   top: 10px;
@@ -31,34 +32,42 @@
   animation: sdb10 2s infinite;
   box-sizing: border-box;
 }
+
 @-webkit-keyframes sdb10 {
   0% {
     -webkit-transform: translate(0, 0);
     opacity: 0;
   }
+
   40% {
     opacity: 1;
   }
+
   80% {
     -webkit-transform: translate(0, 15px);
     opacity: 0;
   }
+
   100% {
     opacity: 0;
   }
 }
+
 @keyframes sdb10 {
   0% {
     transform: translate(0, 0);
     opacity: 0;
   }
+
   40% {
     opacity: 1;
   }
+
   80% {
     transform: translate(0, 15px);
     opacity: 0;
   }
+
   100% {
     opacity: 0;
   }
@@ -80,6 +89,7 @@
   text-decoration: none;
   transition: opacity .3s;
 }
+
 .scroll a:hover {
   opacity: .5;
 }
@@ -108,7 +118,9 @@
 @keyframes spawn-in {
   from {
     opacity: 0;
-  } to {
+  }
+
+  to {
     opacity: 1;
   }
 }
@@ -118,22 +130,27 @@
     -webkit-transform: rotate(-45deg) translate(0, 0);
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     -webkit-transform: rotate(-45deg) translate(-20px, 20px);
     opacity: 0;
   }
 }
+
 @keyframes sdb05 {
   0% {
     transform: rotate(-45deg) translate(0, 0);
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     transform: rotate(-45deg) translate(-20px, 20px);
     opacity: 0;

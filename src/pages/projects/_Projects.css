@@ -34,12 +34,12 @@
 
 .project-tags-lg {
   list-style: none;
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
-  gap: 0.8rem;
+  gap: 1.25rem 0.8rem;
   padding-block: 1rem;
+  flex-wrap: wrap;
 }
-
 
 /* Small */
 .project-card-sm {
@@ -193,7 +193,7 @@
   position: fixed;
   height: 100vh;
   width: 100vw;
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 999;
 
   display: flex;
@@ -233,13 +233,23 @@
 }
 
 @keyframes slide-in {
-  from {transform: translateX(100vh)}
-  to {transform: translateX(0vh)}
+  from {
+    transform: translateX(100vh)
+  }
+
+  to {
+    transform: translateX(0vh)
+  }
 }
 
 @keyframes slide-out {
-  from {transform: translateX(0vh)}
-  to {transform: translateX(100vh)}
+  from {
+    transform: translateX(0vh)
+  }
+
+  to {
+    transform: translateX(100vh)
+  }
 }
 
 .shown {

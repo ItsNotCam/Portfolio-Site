@@ -17,7 +17,7 @@ export const ProjectCardLinks = (props: IProjectCardLinkProps): JSX.Element => {
   const [readmeContent, setReadmeContent] = useState<string>("");
 
   const showReadme = (): void => {
-    if(readmeContent === "" && readmeLink !== undefined) {
+    if (readmeContent === "" && readmeLink !== undefined) {
       fetch(readmeLink.link)
         .then(data => data.text())
         .then(text => {
@@ -37,28 +37,28 @@ export const ProjectCardLinks = (props: IProjectCardLinkProps): JSX.Element => {
       {gitLink ? (
         <div className="project-card-link color-alt-hover">
           <a href={gitLink?.link} target="_blank">
-            <GitHub 
-              style={styles.githubStyle} 
-              titleAccess="Open GitHub Repository" 
+            <GitHub
+              style={styles.githubStyle}
+              titleAccess="Open GitHub Repository"
             />
           </a>
         </div>
       ) : null}
       {readmeLink ? (
         <div className="project-card-link color-alt-hover">
-          <TextSnippetOutlined 
-            style={styles.githubStyle} 
-            onClick={showReadme} 
-            titleAccess="Documentation" 
+          <TextSnippetOutlined
+            style={styles.githubStyle}
+            onClick={showReadme}
+            titleAccess="Documentation"
           />
         </div>
       ) : null}
       {demoLink ? (
         <div className="project-card-link color-alt-hover">
           <a href={demoLink?.link} target="_blank">
-            <LaunchOutlined 
-              style={styles.githubStyle} 
-              titleAccess="Open Demo" 
+            <LaunchOutlined
+              style={styles.githubStyle}
+              titleAccess="Open Demo"
             />
           </a>
         </div>

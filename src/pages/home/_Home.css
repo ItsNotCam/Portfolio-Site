@@ -1,28 +1,28 @@
 /* Home */
 #home {
-  height: 100vh;
-  background-image: url('../background.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+	height: 100vh;
+	background-image: url('../background.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
 }
 
 .home-title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 	text-align: center;
-  width: 100vw;
+	width: 100vw;
 }
 
 .home-title h1 {
 	font-size: 7rem;
-  text-align: center;
+	text-align: center;
 }
 
 .home-title p {
-  font-size: 1.75rem;
+	font-size: 1.75rem;
 }
 
 .blinking-text {
@@ -30,12 +30,12 @@
 }
 
 .home-title-lg {
-  display: block;
+	display: block;
 }
 
 .home-title-md,
 .home-title-sm {
-  display: none;
+	display: none;
 }
 
 @media (max-width: 1050px) {

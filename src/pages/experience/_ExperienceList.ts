@@ -36,8 +36,8 @@ export const EXPERIENCE: Array<IExperience> = [
       automation processes.
     `],
     company_link: "https://www.baesystems.com/en/home",
-    tags: [ "Python", "JavaScript", "Flask", "ReactJS", "Material UI", "Bootstrap", "Docker", "NoSQL" ],
-    links: [ ]
+    tags: ["Python", "JavaScript", "Flask", "ReactJS", "Material UI", "Bootstrap", "Docker", "NoSQL"],
+    links: []
   },
   {
     company: "BAE Systems, Inc.",
@@ -50,15 +50,15 @@ export const EXPERIENCE: Array<IExperience> = [
     logo_path: "BAE.png",
     job_description: [`
       My work on this project was acknowledged by the VP of IT at BAE Systems who offered me a full 
-      time position and a full ride to my university.`,` I lead the design and development of a Windows 
+      time position and a full ride to my university.`, ` I lead the design and development of a Windows 
       sytem performance testing tool that accurately quantified the performance impacts of various 
-      software components on BAE's standard system image.`,`System Administrators who recorded performance
+      software components on BAE's standard system image.`, `System Administrators who recorded performance
       data using this tool reported time savings in excess of 75% over their previous 
-      methods.`,`The resulting data was used to influence future hardware and software requisition.
+      methods.`, `The resulting data was used to influence future hardware and software requisition.
     `],
     company_link: "https://www.baesystems.com/en/home",
-    tags: [ "Windows", "Powershell" ],
-    links: [ ]
+    tags: ["Windows", "Powershell"],
+    links: []
   },
   {
     company: "Parsons Corporation",
@@ -70,12 +70,12 @@ export const EXPERIENCE: Array<IExperience> = [
     end_year: "2018",
     logo_path: "Parsons.png",
     job_description: [`
-      Assisted in the development of a conceptual REST API that would provide authentication and authorization over LDAP.`,`
+      Assisted in the development of a conceptual REST API that would provide authentication and authorization over LDAP.`, `
       Additionally I implemented a feature into an internal tool that allowed for the selection of specific key exchange 
       algorithms for tunneling. 
     `],
     company_link: "https://www.parsons.com",
-    tags: [ "Python", "Flask", "Docker", "Docker Compose", "Unix" ],
-    links: [ ]
+    tags: ["Python", "Flask", "Docker", "Docker Compose", "Unix"],
+    links: []
   }
 ]
