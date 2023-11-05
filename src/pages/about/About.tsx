@@ -12,7 +12,7 @@ export default function About(): JSX.Element {
     <section id="about">
       <h1 className="section-title">
         <span className="color-alt">Who</span>
-        <span className="color-light"> I am</span>
+        <span className="color-light"> I Am</span>
       </h1>
       <div className="about-container">
         <div className="about-description">
