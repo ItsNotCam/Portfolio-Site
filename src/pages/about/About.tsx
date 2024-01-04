@@ -28,8 +28,8 @@ export default function About(): JSX.Element {
           <p>I am a current student at <span className="color-alt">George Mason University.</span></p>
           <p>
             In the
-            <span className="color-light"> Fall of 2024 </span>
-            I will be receiving my
+            <span className="color-light"> Fall of 2025 </span>
+            (god willing) I will be receiving my
             <span className="color-light"> Major in Information Technology </span>
             with a concentration in
             <span className="color-light"> Software Engineering </span>
