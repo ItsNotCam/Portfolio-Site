@@ -70,8 +70,7 @@ export const EXPERIENCE: Array<IExperience> = [
     end_year: "2018",
     logo_path: "Parsons.png",
     job_description: [`
-      Assisted in the development of a conceptual REST API that would provide authentication and authorization over LDAP.`, `
-      Additionally I implemented a feature into an internal tool that allowed for the selection of specific key exchange 
+      I implemented a feature into an internal tool that allowed for the selection of specific key exchange 
       algorithms for tunneling. 
     `],
     company_link: "https://www.parsons.com",
