@@ -63,7 +63,7 @@ export const EXPERIENCE: Array<IExperience> = [
   {
     company: "Parsons Corporation",
     location: "Centreville, VA",
-    title: "DevOps Junior Software Engineering Intern",
+    title: "ITOps Junior Software Engineering Intern",
     start_month: "June",
     start_year: "2018",
     end_month: "August",
