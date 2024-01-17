@@ -32,6 +32,24 @@ export const PROJECTS: Array<IProject> = [
     }
   },
   {
+    name: "🌏 Google Drive Clone",
+    month: "January",
+    year: "2024",
+    description: [
+      `Work in progress containerized full stack web application that will perform all of the base functionality of Google Drive`, 
+      `Users will be able to upload and download files, grant and revoke download permissions for other users, and submit comments on shared files.`
+    ],
+    tags: ["Typescript", "NodeJS", "ReactJS", "NextJS", "Docker"],
+    github_link: {
+      name: "Repo",
+      link: "https://github.com/ItsNotCam/GoogleDriveClone"
+    },
+    readme_link: {
+      link: "https://raw.githubusercontent.com/ItsNotCam/GoogleDriveClone/master/README.md",
+      name: "Readme"
+    }
+  },
+  {
     name: "⌚ VR Smart Watch",
     month: "June",
     year: "2023",
