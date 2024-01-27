@@ -57,7 +57,7 @@ export const PROJECTS: Array<IProject> = [
       A virtual reality smart watch that connects the real world to the virtual world. 
       It displays in real time a user's local time and weather, their heart rate, and more.
     `],
-    tags: ["C#", "WebSockets", "Asychronous Programming"],
+    tags: ["C#", "WebSockets"],
     readme_link: { name: "Readme", link: "https://raw.githubusercontent.com/ItsNotCam/BitwatchVR/master/README.md" },
     github_link: {
       name: "Repo",
