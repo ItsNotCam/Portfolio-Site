@@ -7,7 +7,6 @@ import { PROJECTS } from "./_ProjectList";
 import { ProjectCard } from "./ProjectCard";
 import { ReadmeContent } from "./ReadmeContent";
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
-import { GITHUB } from '../static/_LINKS';
 
 
 export default function Projects(): JSX.Element {
