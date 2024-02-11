@@ -19,7 +19,7 @@ export const styles = {
     color: "inherit"
   },
   githubStyle: {
-    fontSize: "inherit",
+    fontSize: "2rem",
     cursor: "pointer",
     color: "inherit"
   }
@@ -88,8 +88,8 @@ export const ProjectCard = (props: IProjectCardProps): JSX.Element => {
           <div className="project-card-sm-dropdown">
             <IconButton onClick={() => setDroppedDown(!droppedDown)}>
               {droppedDown
-                ? <ArrowDropDownOutlined className="project-icon-button" style={{ fontSize: "3rem" }} />
-                : <ArrowLeftOutlined className="project-icon-button" style={{ fontSize: "3rem" }} />}
+                ? <ArrowDropDownOutlined className="project-icon-button" style={{ fontSize: "2.5rem" }} />
+                : <ArrowLeftOutlined className="project-icon-button" style={{ fontSize: "2.5rem" }} />}
             </IconButton>
           </div>
         </div>
@@ -101,7 +101,6 @@ export const ProjectCard = (props: IProjectCardProps): JSX.Element => {
           </div>
 
           {hasLinks(PROJECT) ? (<>
-            <h2 className="color-alt p-link">More</h2>
             <ProjectCardLinks
               demoLink={PROJECT.demo_link}
               readmeLink={PROJECT.readme_link}

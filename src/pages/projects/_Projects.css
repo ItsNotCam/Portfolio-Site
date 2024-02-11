@@ -17,7 +17,7 @@
 }
 
 .projects-title h1 {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .projects-title i {
@@ -33,7 +33,7 @@
 }
 
 .project-card-lg p {
-  font-size: 1.07rem;
+  /* font-size: 1.07rem; */
   padding-block: 0.25rem;
   opacity: 0.95;
 }
@@ -104,12 +104,13 @@
 
 .project-card-sm-dropdown {
   float: right;
+  font-size: 1rem;
 }
 
 .project-icon-button {
   background-color: rgb(52, 52, 52);
   border-radius: 50%;
-  font-size: rem;
+  /* font-size: rem; */
 }
 
 .project-tags-sm {
@@ -119,7 +120,8 @@
   gap: 0.8em;
   padding-top: 1em;
   padding-bottom: 0.5em;
-  font-size: 1.1em;
+  font-size: 0.9rem;
+  /* font-size: 1.1em; */
 }
 
 .project-icon-button:hover {
@@ -136,7 +138,7 @@
 }
 
 .project-card-sm h1 {
-  font-size: 2em;
+  font-size: 1.2em;
 }
 
 .project-card-links {
@@ -148,7 +150,7 @@
 
 .project-card-link {
   transition: transform 0.2s;
-  font-size: 2.5rem;
+  font-size: 1rem;
 }
 
 .project-card-link a,
@@ -184,7 +186,7 @@
   }
 
   .project-card-sm p {
-    font-size: 1.4em;
+    font-size: 1em;
     text-size-adjust: 170%;
   }
 
@@ -282,6 +284,6 @@
 }
 
 .project-date {
-  font-size: 1em;
+  font-size: 0.9em;
   font-size-adjust: 100%;
 }

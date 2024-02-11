@@ -24,14 +24,9 @@ export default function Projects(): JSX.Element {
         visible={showReadmeContent}
         setShowReadmeVisible={setShowReadmeContent}
       />
-      <p className="projects-title">
-        <h1>
-          <span className="color-alt">What</span>
-          <span className="color-light"> I've Made</span>
-        </h1>
-        <i className="color-dark">
-          (Some of it - the rest is on my <a href={GITHUB} target="_blank" className="color-darker color-alt-hover">GitHub</a>)
-        </i>
+      <p className="section-title">
+        <span className="color-alt">What</span>
+        <span className="color-light"> I've Made</span>
       </p>
       <div className="project-list">
         {PROJECTS.map(project =>

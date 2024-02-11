@@ -17,12 +17,12 @@
 }
 
 .home-title h1 {
-	font-size: 7rem;
+	font-size: 5rem;
 	text-align: center;
 }
 
 .home-title p {
-	font-size: 1.75rem;
+	font-size: 1.35rem;
 }
 
 .blinking-text {
@@ -38,7 +38,7 @@
 	display: none;
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 700px) {
 	.home-title-lg {
 		display: none;
 	}
@@ -53,7 +53,7 @@
 }
 
 
-@media (max-width: 705px) {
+@media (max-width: 600px) {
 	.home-title-lg {
 		display: none;
 	}

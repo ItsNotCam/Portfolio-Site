@@ -21,16 +21,15 @@
 }
 
 .about-description h2 {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .about-description h3 {
-  font-size: 1.65em;
+  font-size: 1.25em;
   margin-bottom: 1.2rem;
 }
 
 .about-description p {
-  font-size: 1.3em;
   color: var(--color-darker);
 }
 
@@ -61,10 +60,12 @@
 }
 
 .resume {
+  font-size: 1rem;
   display: flex;
   align-items: center;
+  margin-right: 2rem;
   text-size-adjust: 200%;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .resume-link {
@@ -75,7 +76,7 @@
   gap: 0.5rem;
   text-decoration: none;
   padding: 0.5em;
-  font-size: 1.5em;
+  font-size: 1.2em;
   border-radius: 8px;
 
   background-color: var(--color-bg-dark);
@@ -87,17 +88,37 @@
   background-color: #d1a857;
 }
 
+.connections {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+
 .about-connect-links a:hover {
   transform: scale(1.15);
   color: var(--color-alt);
 }
 
 @media (max-width: 1000px) {
-  .about-connect {
-    display: flex;
-    flex-direction: column;
+  .resume {
+    width: auto;
+    margin-bottom: 0;
   }
 
+  .connections {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .about-connect {
+    display: flex;
+    flex-direction: row;
+  }
+  
   .about-container {
     flex-direction: column;
   }
@@ -116,8 +137,8 @@
 
   .about-connect-links {
     margin-top: 0;
-    gap: 2rem;
-    font-size: 1.2em;
+    gap: 1rem;
+    font-size: 1em;
     justify-content: center;
   }
 

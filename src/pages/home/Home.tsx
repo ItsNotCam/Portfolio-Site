@@ -25,9 +25,8 @@ export default function Home(): JSX.Element {
 
         <div className="home-title-sm">
           <h1>
-            <span className="color-alt">CAM</span>
-            <span className="color-light"> Y</span>
-            <span className="blinking-text color-light">_</span>
+            <span className="color-light">CAM</span>
+            {/* <span className="blinking-text color-light">_</span> */}
           </h1>
         </div>
 

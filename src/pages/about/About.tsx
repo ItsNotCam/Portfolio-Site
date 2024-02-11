@@ -46,31 +46,28 @@ export default function About(): JSX.Element {
 
           <br />
 
-          <div className="resume">
-            <a href={RESUME} target="_blank" className="color-light bg-dark resume-link">
-              <StickyNote2Outlined htmlColor='white' className="color-alt-hover social-icon" style={{ fontSize: "2rem" }} titleAccess="View Resume" />
-              My Resume
-              <StickyNote2Outlined htmlColor='white' className="color-alt-hover social-icon" style={{ fontSize: "2rem" }} titleAccess="View Resume" />
-            </a>
-          </div>
-          <br />
-          <p className="about-connect">
-            <h3 className="connect-text">
-              <span className="color-alt">Connect</span>
-              <span className="color-light"> with Me</span>
-            </h3>
-            <div className="about-connect-links">
-              <a href="https://github.com/ItsNotCam" target="_blank">
-                <GitHub htmlColor='white' className="color-alt-hover social-icon" style={iconStyle} titleAccess="My GitHub" />
-              </a>
-              <a href="https://www.linkedin.com/in/cameron-young-37b173129/" target="_blank">
-                <LinkedIn htmlColor='white' className="color-alt-hover social-icon" style={iconStyle} titleAccess="My LinkedIn" />
-              </a>
-              <a href="mailto:cyoung35@gmu.edu" target="_blank">
-                <Email htmlColor='white' className="color-alt-hover social-icon" style={iconStyle} titleAccess="Email Me" />
+          <div className="connections">
+            <div className="resume">
+              <a href={RESUME} target="_blank" className="color-light bg-dark resume-link">
+                <StickyNote2Outlined htmlColor='white' className="color-alt-hover social-icon" style={{ fontSize: "2rem" }} titleAccess="View Resume" />
+                My Resume
+                <StickyNote2Outlined htmlColor='white' className="color-alt-hover social-icon" style={{ fontSize: "2rem" }} titleAccess="View Resume" />
               </a>
             </div>
-          </p>
+            <div className="about-connect">
+              <div className="about-connect-links">
+                <a href="https://github.com/ItsNotCam" target="_blank">
+                  <GitHub htmlColor='white' className="color-alt-hover social-icon" style={iconStyle} titleAccess="My GitHub" />
+                </a>
+                <a href="https://www.linkedin.com/in/cameron-young-37b173129/" target="_blank">
+                  <LinkedIn htmlColor='white' className="color-alt-hover social-icon" style={iconStyle} titleAccess="My LinkedIn" />
+                </a>
+                <a href="mailto:cyoung35@gmu.edu" target="_blank">
+                  <Email htmlColor='white' className="color-alt-hover social-icon" style={iconStyle} titleAccess="Email Me" />
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
         <img src="me.jpg" className="about-image" />
       </div>

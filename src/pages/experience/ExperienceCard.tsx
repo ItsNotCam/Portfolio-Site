@@ -68,8 +68,8 @@ export default function ExperienceCard(props: IExperience): JSX.Element {
           <div className="project-card-sm-dropdown">
             <IconButton onClick={() => setDroppedDown(!droppedDown)}>
               {droppedDown
-                ? <ArrowDropDownOutlined className="project-icon-button" style={{ fontSize: "3rem" }} />
-                : <ArrowLeftOutlined className="project-icon-button" style={{ fontSize: "3rem" }} />}
+                ? <ArrowDropDownOutlined className="project-icon-button" style={{ fontSize: "2.5rem" }} />
+                : <ArrowLeftOutlined className="project-icon-button" style={{ fontSize: "2.5rem" }} />}
             </IconButton>
           </div>
         </div>
