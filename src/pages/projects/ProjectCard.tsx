@@ -31,22 +31,17 @@ const hasLinks = (PROJECT: IProject): boolean => {
 
 
 export const ProjectCard = (props: IProjectCardProps): JSX.Element => {
-  const [highlighted, setHighlighted] = useState<boolean>(false);
   const [droppedDown, setDroppedDown] = useState<boolean>(false);
 
   const { PROJECT } = props;
-  const mouseEvents: any = {
-    onMouseEnter: () => setHighlighted(true),
-    onMouseLeave: () => setHighlighted(false)
-  };
-
+  
   const CARD_LARGE = (): JSX.Element => (
-    <div className="project-card-lg" {...mouseEvents}>
+    <div className="project-card-lg">
       <p className="project-date color-darker">
         {PROJECT.year}
       </p>
       <div className="project-card-lg-header">
-        <h1 className={`color-${highlighted ? "alt" : "light"}`}>{PROJECT.name}</h1>
+        <h1>{PROJECT.name}</h1>
         <ProjectCardLinks
           demoLink={PROJECT.demo_link}
           readmeLink={PROJECT.readme_link}
