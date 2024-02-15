@@ -36,8 +36,10 @@ export const PROJECTS: Array<IProject> = [
     month: "January",
     year: "2024",
     description: [
-      `Work in progress containerized full stack web application that will perform all of the base functionality of Google Drive`, 
-      `Users will be able to upload and download files, grant and revoke download permissions for other users, and submit comments on shared files.`
+      `A containerized full stack web application that performs a large portion of 
+			the base functionality of Google Drive. Users can create an account to which they 
+			can upload and download files, and they can grant and revoke access permissions 
+			for other users.`
     ],
     tags: ["Typescript", "NodeJS", "ReactJS", "NextJS", "Docker"],
     github_link: {
