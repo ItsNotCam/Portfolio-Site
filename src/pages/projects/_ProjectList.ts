@@ -21,9 +21,9 @@ export const PROJECTS: Array<IProject> = [
     month: "Oct",
     year: "2023 - 2024",
     description: [`
-      This fully mobile-responsive website was designed and written by me. (try it!)`,
+      This website was designed and written by me.`,
       `It was developed using ReactJS with Typescript and 
-      vanilla CSS (no CSS frameworks or html templates were used).
+      vanilla CSS.
     `],
     tags: ["ReactJS", "Typescript", "Vanilla CSS"],
     github_link: {
