@@ -24,11 +24,14 @@
 }
 
 .markdown code {
-  background-color: rgb(63, 63, 63);
+  background-color: rgb(16, 16, 16);
   border-radius: 5px;
   padding-inline: 0.4rem;
   padding-block: 0.25rem;
   font-size: 0.9rem;
+  font-family: "Space Mono", monospace;
+	font-weight: 500;
+	line-height: 1.8;
 }
 
 .markdown table {

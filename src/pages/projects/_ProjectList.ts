@@ -31,6 +31,25 @@ export const PROJECTS: Array<IProject> = [
       link: "https://github.com/ItsNotCam/Portfolio-Site"
     }
   },
+	{
+    name: "🚀 Pokescrape",
+    month: "May",
+    year: "2024",
+    description: [
+      "A web scraper that scrapes 'pokemondb.net'",
+			"It stores the scraped Pokemon data in a MySQL database that holds several entities. These entities facilitate " +
+			"the adequate storage and categorization of the vast amount of information that the Pokemon game mechanics hold."
+    ],
+    tags: ["Python"],
+    github_link: {
+      name: "Repo",
+      link: "https://github.com/ItsNotCam/Pokescrape"
+    },
+    readme_link: {
+      link: "https://raw.githubusercontent.com/ItsNotCam/Pokescrape/master/README.md",
+      name: "Readme"
+    }
+	},
   {
     name: "🌏 Google Drive Clone",
     month: "January",
