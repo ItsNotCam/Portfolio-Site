@@ -51,13 +51,13 @@ export const PROJECTS: Array<IProject> = [
     }
 	},
   {
-    name: "🌏 Google Drive Clone",
+    name: "🌏 Cloud File Sharing App",
     month: "January",
     year: "2024",
     description: [
       `A containerized full stack web application that performs a large portion of 
 			the base functionality of Google Drive. Users can create an account to which they 
-			can upload and download files, and they can grant and revoke access permissions 
+			can upload and download files, and they can grant and revoke access permissions to those files
 			for other users.`
     ],
     tags: ["Typescript", "NodeJS", "ReactJS", "NextJS", "Docker", "SQL (MySQL)"],
