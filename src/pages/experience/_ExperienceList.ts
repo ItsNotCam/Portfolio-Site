@@ -22,7 +22,7 @@ export const EXPERIENCE: Array<IExperience> = [
   {
     company: "BAE Systems, Inc.",
     location: "Reston, VA",
-    title: "DevOps Software Engineering Intern",
+    title: "Software Engineering Intern",
     start_month: "Dec",
     start_year: "2019",
     end_month: "March",
@@ -36,7 +36,7 @@ export const EXPERIENCE: Array<IExperience> = [
       automation processes.
     `],
     company_link: "https://www.baesystems.com/en/home",
-    tags: ["Python", "JavaScript", "Flask", "ReactJS", "Material UI", "Bootstrap", "Docker", "NoSQL"],
+    tags: ["Python", "JavaScript", "Flask", "ReactJS", "Material UI", "Bootstrap", "Docker", "SQL (SQLite)"],
     links: []
   },
   {

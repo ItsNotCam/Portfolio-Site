@@ -40,7 +40,7 @@ export const PROJECTS: Array<IProject> = [
 			"It stores the scraped Pokemon data in a MySQL database that holds several entities. These entities facilitate " +
 			"the adequate storage and categorization of the vast amount of information that the Pokemon game mechanics hold."
     ],
-    tags: ["Python"],
+    tags: ["Python", "SQL (MySQL)"],
     github_link: {
       name: "Repo",
       link: "https://github.com/ItsNotCam/Pokescrape"
@@ -60,7 +60,7 @@ export const PROJECTS: Array<IProject> = [
 			can upload and download files, and they can grant and revoke access permissions 
 			for other users.`
     ],
-    tags: ["Typescript", "NodeJS", "ReactJS", "NextJS", "Docker"],
+    tags: ["Typescript", "NodeJS", "ReactJS", "NextJS", "Docker", "SQL (MySQL)"],
     github_link: {
       name: "Repo",
       link: "https://github.com/ItsNotCam/GoogleDriveClone"
@@ -104,7 +104,7 @@ export const PROJECTS: Array<IProject> = [
       `This automates the process of saving your favorite locations
       within the game, replacing traditional pen-and-paper methods.
     `],
-    tags: ["Java", "NoSQL"],
+    tags: ["Java", "SQL (SQLite)"],
     github_link: {
       name: "Repo",
       link: "https://github.com/ItsNotCam/MC-Coordinates-Book"
@@ -135,9 +135,9 @@ export const PROJECTS: Array<IProject> = [
     description: [`
       Full stack web application developed for BAE Systems, Inc.`,
       `It extracts information from packet capture files 
-      and stores them in a NoSQL database. It also exposes an API for integration into other internal tools.
+      and stores them in a SQLite database. It also exposes an API for integration into other internal tools.
     `],
     company_link: { name: "BAE Systems, Inc.", link: "https://www.baesystems.com/en/home" },
-    tags: ["Python", "Javascript", "Flask", "ReactJS", "Docker", "NoSQL"]
+    tags: ["Python", "Javascript", "Flask", "ReactJS", "Docker", "SQL (SQLite)"]
   }
 ]
