@@ -37,10 +37,10 @@ export const PROJECTS: Array<IProject> = [
     year: "2024",
     description: [
       "A web scraper that scrapes 'pokemondb.net'",
-			"It stores the scraped Pokemon data in a MySQL database that holds several entities. These entities facilitate " +
+			"It stores the scraped Pokemon data in a PostgreSQL database that holds several entities. These entities facilitate " +
 			"the adequate storage and categorization of the vast amount of information that the Pokemon game mechanics hold."
     ],
-    tags: ["Python", "SQL (MySQL)"],
+    tags: ["Python", "SQL (PostgreSQL)"],
     github_link: {
       name: "Repo",
       link: "https://github.com/ItsNotCam/Pokescrape"
@@ -50,15 +50,35 @@ export const PROJECTS: Array<IProject> = [
       name: "Readme"
     }
 	},
+	{
+    name: "💸 Pico",
+    month: "February",
+    year: "2024",
+    description: [
+      "An HTML, CSS, and JQuery website displaying a fake smartphone ad.",
+			"It is my first attempt at a pure static site with a heavy focus on CSS (semi-responsive), and it " +
+			"was created as a school project.",
+			"Due to its quality, the professor openly admitted that they believed me to be cheating."
+    ],
+    tags: ["HTML", "CSS (PostCSS)", "JQuery", "JavaScript", "TypeScript", "Webpack"],
+    github_link: {
+      name: "Repo",
+      link: "https://github.com/ItsNotCam/Pico"
+    },
+		demo_link: {
+			link: "https://mason.gmu.edu/~cyoung35/index.html",
+			name: "Demo"
+		}
+	},
   {
     name: "🌏 Cloud File Sharing App",
     month: "January",
     year: "2024",
     description: [
-      `A containerized full stack web application that performs a large portion of 
-			the base functionality of Google Drive. Users can create an account to which they 
-			can upload and download files, and they can grant and revoke access permissions to those files
-			for other users.`
+      "A containerized full stack web application that performs a large portion of " +
+			"the base functionality of a cloud file sharing application. ",
+			"Users can create an account to which they can upload and download files, as " +
+			"well as can grant and revoke access permissions to those files for other users."
     ],
     tags: ["Typescript", "NodeJS", "ReactJS", "NextJS", "Docker", "SQL (MySQL)"],
     github_link: {
